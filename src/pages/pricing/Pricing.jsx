@@ -11,7 +11,7 @@ const Pricing = () => {
 <div>
 <h2 className='text-center text-dark_violet text-xl font-bold md:text-2xl md:w-[70%] md:m-auto'>Want to create smart course selections for your career - pick a subscription plan</h2>
 
-<div className='grid grid-cols-1 md:grid-cols-3 md:gap-4 gap-10 mt-16'>
+<div className='grid grid-cols-1 md:grid-cols-3 md:gap-4 md:p-4 gap-10 mt-16'>
 
 <div className='relative border-[1px] border-primary py-4 flex flex-col items-start rounded-lg shadow-md bg-white '>
     <div className='flex-1 flex flex-col justify-between items-start'>
@@ -61,9 +61,9 @@ const Pricing = () => {
 </div>
 {/*  */}
 
-<div className='relative border-[1px] border-primary py-4 flex flex-col items-center rounded-lg shadow-md bg-white before:content-["Recommended"] before:absolute before:-top-[37px] before:bg-dark_violet before:px-10 before:py-2 before:text-white before:text-sm before:rounded-tr-2xl before:rounded-tl-2xl'>
+<div className='relative border-[1px] border-primary py-4 flex flex-col items-center  rounded-lg shadow-md bg-white before:content-["Recommended"] before:absolute before:-top-[37px] before:bg-dark_violet before:px-10 before:py-2 before:text-white before:text-sm before:rounded-tr-2xl before:rounded-tl-2xl'>
 
-<div className='flex-1 flex flex-col justify-between items-start'>
+<div className='flex-1 flex flex-col justify-between items-start w-full'>
 
 <img src={pro} alt="" className='p-4'/>
    <div className='border-[1px] px-4 py-1 border-primary text-[1.5rem] font-normal border-l-0
