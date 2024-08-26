@@ -1,0 +1,16 @@
+import basic from './basic.svg'
+import check from './check.svg'
+import pro from './pro.svg'
+import enterprise from './enterprise.svg'
+import sales from './sales.svg'
+import wrong from './wrong.svg'
+import visa from './visa.svg'
+import applepay from './applepay.svg'
+import credit from './creditcard.svg'
+import paypal from './paypal.svg'
+import creditinput from './creditinput.svg'
+import paypalbtn from './paypalbtn.svg'
+import success from './success.svg'
+import failure from './failure.svg'
+
+export {basic,check,pro,enterprise,sales,wrong,visa,applepay,credit,paypal,creditinput,paypalbtn,success,failure}
