@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 // import Navbar from "./components/Navbar/Navbar"
-import Course from "./pages/Course"
-import Navigation from "./components/Navigation"
-import AboutCourse from "./pages/AboutCourse"
+
+
 import Signin from "./pages/authorization/Signin"
 import Signup from "./pages/authorization/Signup"
 
@@ -25,6 +24,8 @@ import { Navbar } from "./components/Navbar"
 import { Cart } from "./pages/cart"
 import { Path } from "./pages/path"
 import { FailSubscribe, Payment, Pricing, SuccessfulSubscribe } from "./pages/pricing"
+
+import { Course ,AboutCourse,EditCourse, CreateCourse, EditSingleCourse} from "./pages/course"
 
 
 function App() {
@@ -51,7 +52,10 @@ theme="light"
   <Routes>
 <Route path="/" element={<Landing/>}/>
 <Route path="/course" element={<Course/>}/>
-<Route path="/course/:id" element={<AboutCourse/>}/>
+{/* <Route path="/course/:id" element={<AboutCourse/>}/> */}
+<Route path="/edit-course/:id" element={<EditSingleCourse/>}/>
+<Route path="/edit-course" element={<EditCourse/>}/>
+<Route path="/create-course" element={<CreateCourse/>}/>
 <Route path="/login" element={<Signin/>}/>
 <Route path="/register" element={<Signup/>}/>
 <Route path="/signup-organisation" element={<SignupOrg/>}/>

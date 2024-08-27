@@ -51,7 +51,7 @@ const handleIndex=(id)=>{
 </div>
 
 </div>
-<form action="" className='bg-white flex flex-col gap-4 border-[1px] p-2 rounded-md'>
+<form  className='bg-white flex flex-col gap-4 border-[1px] p-2 rounded-md'>
 <h2 className='text-dark_violet font-bold text-xl'>Change password</h2>
 <div className='flex flex-col gap-1 md:w-[50%]'>
     <label htmlFor="" className='font-medium text-base text-dark_violet capitalize'>New password</label>

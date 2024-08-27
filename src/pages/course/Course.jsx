@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import Navigation from '../components/Navigation'
-import Pagination from '../components/Pagination'
-import search from '../assets/search.svg'
-import view from '../assets/horizontal.svg'
+import Navigation from '../../components/Navigation'
+import Pagination from '../../components/Pagination'
+import search from '../../assets/search.svg'
+import view from '../../assets/horizontal.svg'
 import { Tabs } from 'antd';
-import Card from '../components/HorizontalCard'
-import Filter from '../components/Filter'
-import VerticalCard from '../components/VerticalCard'
-import vertical from '../assets/vartical.svg'
-import { courseData } from '../data'
-import filterIcon from '../assets/filterIcon.svg'
+import Card from '../../components/HorizontalCard'
+import Filter from '../../components/Filter'
+import VerticalCard from '../../components/VerticalCard'
+import vertical from '../../assets/vartical.svg'
+import { courseData } from '../../data'
+import filterIcon from '../../assets/filterIcon.svg'
 import { Button, Drawer, Radio, Space } from 'antd';
 
 

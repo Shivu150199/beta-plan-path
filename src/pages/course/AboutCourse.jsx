@@ -1,11 +1,10 @@
 import React from 'react'
-import Navbar from '../components/Navbar/Navbar'
-import Navigation from '../components/Navigation'
-import SingleCourse from '../components/SingleCourse'
+import Navbar from '../../components/Navbar/Navbar'
+import Navigation from '../../components/Navigation'
+import SingleCourse from '../../components/SingleCourse'
 import { Tabs } from 'antd'
-import CourseInfo from '../components/CourseInfo'
-import CourseDesc from '../components/CourseDesc'
-import UserReview from '../components/UserReview'
+
+import { CourseDesc, CourseInfo, UserReview } from '../../components/course'
 
 const AboutCourse = () => {
   let navigationList=['Home','Courses']
@@ -18,7 +17,7 @@ const AboutCourse = () => {
     {
       key: '2',
       label: 'Course Description',
-      children: <CourseDesc/>,
+      children: <CourseDesc courseDescription={''}/>,
     },
     {
       key: '3',

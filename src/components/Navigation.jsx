@@ -12,7 +12,7 @@ const Navigation = ({list}) => {
 navigate(-1)
   }
   return (
-    <div className='hidden md:flex items-center gap-4 my-2 px-4'>
+    <div className='hidden md:flex items-center gap-4 px-4 py-2' >
         <button onClick={handleBack} className='flex items-center justify-center gap-2 border-[1px] px-2 border-primary rounded-[4px]'>
             <img src={back} alt="" />
             <span className='text-[12px] font-[500] text-primary'>back</span>

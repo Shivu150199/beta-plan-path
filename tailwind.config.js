@@ -14,7 +14,8 @@ export default {
         light_violet:'#ECE4FF',
         placeholder:'#8A8A8A', // Example of a custom primary color
         success:'#2FAF47',
-        failure:'#EF0000'
+        failure:'#EF0000',
+        creambg:'#f5f5f5'
       },
       screens: {
         'xs': {'max': '300px'},  // Custom screen size for up to 300px
