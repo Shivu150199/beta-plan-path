@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 import React from 'react'
-import { arrowDown } from '../../assets/course'
+
 import { angleDown } from '../../assets/pricing'
 
 const Select = ({label,placeholder,list}) => {
