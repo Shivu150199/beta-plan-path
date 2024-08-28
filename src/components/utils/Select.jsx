@@ -15,7 +15,7 @@ const Select = ({label,placeholder,list}) => {
 
   
 </select> */}
-   <select  className={`select  select-bordered w-full rounded-[4px] outline-none placeholder:text-placeholder`}>
+   <select  className='course-select select  select-bordered w-full rounded-[4px] outline-none placeholder:text-placeholder'>
   <option disabled  className='text-placeholder'>{placeholder}</option>
   {list.map((item)=>{
     let id=nanoid()
