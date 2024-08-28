@@ -130,3 +130,9 @@ height:18rem;
   .ant-tabs-ink-bar {
     background-color: #4a00ff !important; /* Change this to your desired color */
   }
+
+
+
+  .item-select{
+    background-image:url('./assets/course/arrowDowns.svg');background-repeat:no-repeat;background-position:calc(100% - 10px) center
+  }
