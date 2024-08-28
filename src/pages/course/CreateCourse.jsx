@@ -76,12 +76,12 @@ const handleCancel=(e)=>{
 <div className='flex flex-col gap-2 '>
   <label  className='text-base font-medium text-dark_gray'>Add Course Image</label>
   <input ref={fileName} type="file" className="input input-bordered  rounded-[4px] outline-none placeholder:text-placeholder hidden" onChange={handleImageChange} />
-  <div className='flex items-center justify-center w-44 h-24 border-[1px] rounded-md' onClick={()=>fileName.current.click()}>
+  <div className='relative flex items-center justify-center w-44 h-24 border-[1px] rounded-md overflow-hidden' onClick={()=>fileName.current.click()}>
 {showImage?
 
 
-<div className='relative'>
-<img src={fileImageUrl} alt="file image" className='w-full h-full' /> 
+<div className=''>
+<img src={fileImageUrl} alt="file image" className='w-full h-full object-cover' /> 
 <button onClick={(e)=>{
   e.stopPropagation()
   setShowImage(!showImage)}} className='absolute top-0 right-0 bg-white'><img src={close} alt="" /></button>
