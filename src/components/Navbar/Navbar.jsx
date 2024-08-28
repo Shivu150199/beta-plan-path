@@ -8,7 +8,7 @@ import select from '../../assets/navbar/select.svg'
 import { Menu } from '../menu';
 import AuthButton from './AuthButton';
 import Profile from './Profile&List';
-import { arrowDown } from '../../assets/course';
+// import { arrowDowns } from '../../assets/course';
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
