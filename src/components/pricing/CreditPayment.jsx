@@ -5,7 +5,7 @@ const CreditPayment = () => {
   return (
     <div className='flex flex-col gap-2 w-full'>
 <div className='flex items-center  border-[1px] outline-none rounded-lg'>
-  <div className='flex items-center justify-center p-4 bg-violet-300 rounded-tl-[8px] rounded-bl-[8px]'>
+  <div className='flex items-center justify-center p-4 bg-[#EFEAFF] rounded-tl-[6px] rounded-bl-[6px] h-14'>
 
   <img src={creditinput} alt="" />
   </div>

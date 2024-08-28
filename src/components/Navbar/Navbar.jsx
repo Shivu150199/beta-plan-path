@@ -8,6 +8,7 @@ import select from '../../assets/navbar/select.svg'
 import { Menu } from '../menu';
 import AuthButton from './AuthButton';
 import Profile from './Profile&List';
+import { arrowDown } from '../../assets/course';
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -47,13 +48,12 @@ const Navbar = () => {
 
     <div className=' bg-[#f4f4f4] gap-2 items-center rounded-[8px] px-4 pl-2 w-96 hidden lg:flex'>
       <div className='flex items-center justify-center py-2 px-4 border-r-[2px] border-light_gray'>
-      <select name="" id="" className='bg-transparent  outline-none'>
+      <select name="" id="" className='bg-transparent  outline-none' style={{background:`url(${select})`,backgroundRepeat:'no-repeat',backgroundPosition:'calc(100% - 10px) center',right:'10px'}}>
         <option value="">All</option>
         <option value="">Math</option>
         <option value="">English</option>
         <option value="">Science</option>
       </select>
-      <img src={select} alt="" />
       </div>
     
     <input type="search" placeholder='Search course' className='bg-transparent outline-none w-full pl-2' />

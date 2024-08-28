@@ -29,7 +29,13 @@ const handleImageChange=(e)=>{
 const handlePage=()=>{
   setPageNumber((prevPage) => (prevPage + 1) % pages.length);
 }
+const handleCancel=(e)=>{
+  e.stopPropagation()
+  if(pageNumber>0){
 
+    setPageNumber((prevPage)=>prevPage-1)
+  }
+}
   return (<>
  <section className='w-[100%] flex flex-col bg-creambg'>
 <div className='flex flex-col border-b-[1px] sticky top-0 bg-white mb-4'>
@@ -165,7 +171,7 @@ const handlePage=()=>{
 {/*  */}
 
 <div className='px-4 py-3 flex gap-10 items-center justify-end fixed w-[100%] bottom-0 bg-white shadow-[0px_-3px_6px_0px_rgba(0,_0,_0,_0.1)]'>
-<button className='text-primary font-medium text-sm'>
+<button className='text-primary font-medium text-sm' onClick={handleCancel}>
   Cancel
 </button>
 <button className='text-primary font-medium text-sm'>

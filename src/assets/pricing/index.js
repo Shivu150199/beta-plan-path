@@ -12,5 +12,5 @@ import creditinput from './creditinput.svg'
 import paypalbtn from './paypalbtn.svg'
 import success from './success.svg'
 import failure from './failure.svg'
-
-export {basic,check,pro,enterprise,sales,wrong,visa,applepay,credit,paypal,creditinput,paypalbtn,success,failure}
+import angleDown from './angleDown.svg'
+export {basic,check,pro,enterprise,sales,wrong,visa,applepay,credit,paypal,creditinput,paypalbtn,success,failure,angleDown}

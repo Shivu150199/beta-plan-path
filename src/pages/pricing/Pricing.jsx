@@ -9,12 +9,12 @@ const Pricing = () => {
    <section className='bg-[#fafafa] w-[100%] p-4'>
 <Navigation list={navigationList}/>
 <div>
-<h2 className='text-center text-dark_violet text-xl font-bold md:text-2xl md:w-[70%] md:m-auto'>Want to create smart course selections for your career - pick a subscription plan</h2>
+<h2 className='text-center text-dark_violet text-xl font-bold md:text-2xl md:w-[70%] lg:w-[50%] md:m-auto pt-8'>Want to create smart course selections for your career - pick a subscription plan</h2>
 
-<div className='grid grid-cols-1 md:grid-cols-3 md:gap-4 md:p-4 gap-10 mt-16'>
+<div className='grid grid-cols-1 md:grid-cols-3 lg:gap-10 gap-4 md:p-4 mt-20'>
 
-<div className='relative border-[1px] border-primary py-4 flex flex-col items-start rounded-lg shadow-md bg-white '>
-    <div className='flex-1 flex flex-col justify-between items-start'>
+<div className=' border-[1px] border-primary py-4 flex flex-col items-start rounded-lg shadow-md bg-white '>
+    <div className='flex-1 flex flex-col justify-between items-start w-full'>
     <img src={basic} alt="" className='p-4'/>
    <div className='border-[1px] px-4 py-1 border-primary text-[1.5rem] font-normal border-l-0
      bg-light_violet rounded-tr-3xl rounded-br-3xl'>Basic plan</div>
@@ -23,7 +23,7 @@ const Pricing = () => {
     <h2 className='font-bold text-dark_violet text-5xl'>$20</h2>
     <p className='text-[1rem] font-medium'>per user/month billed annually</p>
    </div>
-   <div className='p-4 w-[100%] border-b-[1px] flex'>
+   <div className='p-4 w-full border-b-[1px] flex'>
 
 <Link to='/payment' className='w-[100%] py-2 bg-primary rounded-3xl text-white font-medium text-base flex items-center justify-center'>Get started</Link>
 </div>
@@ -61,7 +61,7 @@ const Pricing = () => {
 </div>
 {/*  */}
 
-<div className='relative border-[1px] border-primary py-4 flex flex-col items-center  rounded-lg shadow-md bg-white before:content-["Recommended"] before:absolute before:-top-[37px] before:bg-dark_violet before:px-10 before:py-2 before:text-white before:text-sm before:rounded-tr-2xl before:rounded-tl-2xl'>
+<div className='relative border-[1px] border-primary py-4 flex flex-col items-center  rounded-lg shadow-md bg-white before:content-["Recommended"] before:absolute before:-top-[37px] before:bg-dark_violet before:px-10 before:py-2 before:text-white before:text-sm before:rounded-tr-2xl before:rounded-tl-2xl mt-10 md:mt-0'>
 
 <div className='flex-1 flex flex-col justify-between items-start w-full'>
 

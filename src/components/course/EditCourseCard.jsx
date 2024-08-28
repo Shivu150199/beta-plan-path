@@ -7,8 +7,8 @@ import { edit } from '../../assets/course'
 
 const EditCourseCard = ({ title, credit, image, available, about, desc, rating, totalRating, id }) => {
     return (
-        <article className='p-1 border shadow-md flex rounded-lg  gap-4'>
-            <div className='bg-slate-200 rounded-lg '>
+        <article className='p-1 border shadow-md flex rounded-lg  gap-4 flex-col md:flex-row'>
+            <div className='bg-slate-100 rounded-lg h-36 md:h-auto'>
 
                 <img src={image} alt="" className='rounded h-full w-full object-cover object-left' />
             </div>

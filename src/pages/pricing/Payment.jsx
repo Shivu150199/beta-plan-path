@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Navigation from '../../components/Navigation'
-import { applepay, credit, paypal, visa } from '../../assets/pricing'
+import { angleDown, applepay, credit, paypal, visa } from '../../assets/pricing'
 import { Applepay, CreditPayment, Paypal } from '../../components/pricing'
 import { Link } from 'react-router-dom'
 
@@ -46,7 +46,8 @@ const handleSelectedMethod=(select)=>{
 </div>
 
 <p className='text-sm font-normal text-[#4b4b4b] md:w-[70%]'>
-  By clicking "Agree and subscribe", you agree: After your trial ends, you will be charged US$30 (plus tax) monthly. At the end of your one-year term, your subscription will automatically renew monthly until you cancel (price subject to change). No annual commitment required after the first year. You also agree to the Terms of Use and the Subscription and Cancellation Terms.
+  By clicking "Agree and subscribe", you agree: After your trial ends, you will be charged US$30 (plus tax) monthly. At the end of your one-year term, your subscription will automatically renew monthly until you cancel (price subject to change). No annual commitment required after the first year. You also agree to the <Link to='/policy' className='text-blue-500'>Terms of Use
+  </Link>  and the <Link className='text-blue-700'>Subscription and Cancellation Terms.</Link> 
 </p>
 
 <div className='flex my-10 gap-4'>
@@ -62,12 +63,18 @@ const handleSelectedMethod=(select)=>{
 
   <aside className='md:p-4 flex items-center flex-col md:flex-[.4] lg:flex-[.3] mb-10 md:mb-4'>
 <div className='w-full md:border-[1px] border-b-[1px] md:shadow p-2 md:rounded-lg'>
-<h3 className='text-[28px] font-bold text-dark_violet pb-4'>Summary</h3>
+<h3 className='text-[28px] font-bold text-dark_violet px-2 py-4'>Summary</h3>
 
 <div className='flex flex-col gap-1 border-t-[1px] p-2'>
   <h4 className='text-sm font-normal text-[#4b4b4b]'>Subscription</h4>
   <div className='flex items-center justify-between'>
-    <span className='text-base text-[#4b4b4b] font-normal'>Pro</span>
+    {/* <button className='text-base text-[#4b4b4b] font-normal flex items-center gap-4'>Pro <img src={angleDown} alt="" /></button> */}
+    <select  style={{background:`url(${angleDown})`,backgroundRepeat:'no-repeat',backgroundPosition:'calc(100% - 10px) center',right:'10px'}} name="" id="" className='text-base text-[#4b4b4b] font-normal outline-none w-20'>
+<option  value="">Pro </option>
+<option  value="">Basic </option>
+
+
+      </select>
     <span className='text-base text-[#4b4b4b] font-normal'>US $30/month</span>
   </div>
 </div>

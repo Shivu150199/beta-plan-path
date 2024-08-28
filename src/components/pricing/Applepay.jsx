@@ -1,4 +1,5 @@
 import React from 'react'
+import { angleDown } from '../../assets/pricing'
 
 const Applepay = () => {
   return (
@@ -8,7 +9,11 @@ const Applepay = () => {
       <input type="text" placeholder='First name' className='p-4 w-full border-[1px] outline-none rounded-lg placeholder:text-[#4b4b4b]'/>
       <input type="text" placeholder='Last name' className='p-4 w-full border-[1px] outline-none rounded-lg placeholder:text-[#4b4b4b]'/>
       <input type="number" placeholder='Zip code' className='p-4 w-full border-[1px] outline-none rounded-lg placeholder:text-[#4b4b4b]'/>
-      <input type="number" placeholder='Country/Region' className='p-4 w-full border-[1px] outline-none rounded-lg placeholder:text-[#4b4b4b]'/>
+      {/* <input type="number" placeholder='Country/Region' className='p-4 w-full border-[1px] outline-none rounded-lg placeholder:text-[#4b4b4b]'/> */}
+      <select defaultValue='Country/Region ' style={{background:`url(${angleDown})`,backgroundRepeat:'no-repeat',backgroundPosition:'calc(100% - 10px) center',right:'10px'}} name="" id="" className='p-4 w-full border-[1px] outline-none rounded-lg placeholder:text-[#4b4b4b]'>
+<option value="">Country/Region </option>
+
+      </select>
     
     </div>
 
