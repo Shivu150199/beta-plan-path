@@ -50,7 +50,8 @@ select {
     appearance: none; /* For most browsers */
     -webkit-appearance: none; /* For Chrome, Safari, and Opera */
     -moz-appearance: none; /* For Firefox */
-  /* Make room for the custom arrow */
+
+
   }
 @layer base {
     input[type='number']::-webkit-outer-spin-button,
