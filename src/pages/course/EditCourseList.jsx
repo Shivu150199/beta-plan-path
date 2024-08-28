@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { courseData } from '../../data'
 import Navigation from '../../components/Navigation'
-import { arrowDown, close, plus } from '../../assets/course'
+import { arrowDowns, close, plus } from '../../assets/course'
 import EditCourseCard from '../../components/course/EditCourseCard'
 
 import Pagination from '../../components/Pagination'
@@ -32,7 +32,7 @@ const EditCourse = () => {
             <div className='flex items-center gap-4'>
             <label className='hidden md:flex items-center gap-2'>
         <span className='text-[13px] text-[#525252] font-[500] capitalize'>Item per page : </span>
-        <select style={{background:`url(${angleDown})`,backgroundRepeat:'no-repeat',backgroundPosition:'calc(100% - 10px) center',right:'10px'}} name="" id="" className='py-1 px-2 border-[1px] border-primary text-primary outline-none rounded-md text-[13px] font-[500] w-14'>
+        <select style={{background:`url(${arrowDowns})`,backgroundRepeat:'no-repeat',backgroundPosition:'calc(100% - 10px) center',right:'10px'}} name="" id="" className='py-1 px-2 border-[1px] border-primary text-primary outline-none rounded-md text-[13px] font-[500] w-14'>
             <option value="">25</option>
             <option value="">26</option>
             <option value="">27</option>

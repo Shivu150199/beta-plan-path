@@ -7,6 +7,6 @@ import edit from './edit.svg'
 import close from './close.svg'
 import files from './files.svg'
 import faq from './faq.svg'
-import arrowDown from './arrowDown.svg'
+import arrowDowns from './arrowDowns.svg'
 
-export {ds,math,english,plus,edit,close,files,faq,arrowDown}
+export {ds,math,english,plus,edit,close,files,faq,arrowDowns}
