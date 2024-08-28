@@ -15,7 +15,7 @@ const Select = ({label,placeholder,list}) => {
 
   
 </select> */}
-   <select style={{backgroundImage:`url(${angleDown})`,backgroundRepeat:'no-repeat',backgroundPosition:'calc(100% - 10px) center',backgroundSize:'10px'}} className={`select  select-bordered w-full rounded-[4px] outline-none placeholder:text-placeholder`}>
+   <select  className={`select  select-bordered w-full rounded-[4px] outline-none placeholder:text-placeholder`}>
   <option disabled  className='text-placeholder'>{placeholder}</option>
   {list.map((item)=>{
     let id=nanoid()
