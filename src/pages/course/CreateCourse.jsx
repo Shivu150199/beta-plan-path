@@ -1,11 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { close, files } from '../../assets/course'
 import { Input, Select } from '../../components/utils'
-import TextArea from 'antd/es/input/TextArea'
+
 import { AddDescription, CompleteCourseModal, FaqForm, FaqList, PageStep } from '../../components/course'
 import NoFaq from '../../components/course/NoFaq'
+import { CourseContext } from '../../context api/CourseContext'
 
-const CreateCourse = ({onClose}) => {
+const CreateCourse = () => {
+  const {setOpen}=useContext(CourseContext)
   const pages=['addDetails','addDescription','faq']
   const [fileImage,setFileImage]=useState(null)
   const [fileImageUrl,setFileImageUrl]=useState(null)
@@ -41,7 +43,7 @@ const handleCancel=(e)=>{
 <div className='flex flex-col border-b-[1px] sticky top-0 bg-white mb-4'>
   <div className='flex items-center justify-between p-4'>
   <h2 className='text-2xl font-bold text-dark_violet '>Create course</h2>
-  <button onClick={onClose}><img src={close} alt="close icon" /></button>
+  <button onClick={()=>setOpen(false)}><img src={close} alt="close icon" /></button>
   </div>
   <div className='border-[1px] shadow-sm bg-white'>
 <div className='p-4 lg:w-[40%] flex items-center '>
@@ -60,7 +62,7 @@ const handleCancel=(e)=>{
 
 <form action="" className='flex flex-col gap-4 w-full lg:w-[80%] h-[100%]'>
   {/*  */}
-<div className='flex items-center justify-between gap-8 pt-6'>
+<div className='flex items-center justify-between gap-8 pt-6 flex-col sm:flex-row'>
 <Select label='Entity Type' placeholder='Enter entity type' list={[]}/>
 <Select label='State' placeholder='Select state' list={[]}/>
 {/* <Select label='Entity Type' placeholder='Enter entity type' list={[]}/> */}
@@ -72,11 +74,11 @@ const handleCancel=(e)=>{
 <Input label='Course Title' type='text' placeholder='Enter course title' onChange={handleImageChange}/>
 </div>
 {/*  */}
-<div className='flex gap-4'>
+<div className='flex gap-4 flex-col sm:flex-row'>
 <div className='flex flex-col gap-2 '>
   <label  className='text-base font-medium text-dark_gray'>Add Course Image</label>
   <input ref={fileName} type="file" className="input input-bordered  rounded-[4px] outline-none placeholder:text-placeholder hidden" onChange={handleImageChange} />
-  <div className='relative flex items-center justify-center w-44 h-24 border-[1px] rounded-md overflow-hidden' onClick={()=>fileName.current.click()}>
+  <div className='relative flex items-center justify-center sm:w-44 h-24 border-[1px] rounded-md overflow-hidden' onClick={()=>fileName.current.click()}>
 {showImage?
 
 
@@ -110,7 +112,7 @@ const handleCancel=(e)=>{
 </div>
 {/*  */}
 
-<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-20'>
+<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 pb-20'>
 <Select label='Credits (Available Credits)' placeholder='Enter entity type' list={[]}/>
 <Select label='Course Length/ Duration' placeholder='Select course length/ curation' list={[]}/>
 <Select label='Course Level' placeholder='Select course level' list={[]}/>
@@ -188,7 +190,7 @@ const handleCancel=(e)=>{
 </div>
 
 
-<CompleteCourseModal onClose={onClose}/>
+<CompleteCourseModal/>
 
  </section>
 

@@ -26,6 +26,7 @@ import { Path } from "./pages/path"
 import { FailSubscribe, Payment, Pricing, SuccessfulSubscribe } from "./pages/pricing"
 
 import { Course ,AboutCourse,EditCourse, CreateCourse, EditSingleCourse} from "./pages/course"
+import { Wishlist } from "./pages/wishlist"
 
 
 function App() {
@@ -78,6 +79,8 @@ theme="light"
 <Route path="/payment" element={<Payment/>}/>
 <Route path="/subscribed" element={<SuccessfulSubscribe/>}/>
 <Route path="/not-subscribed" element={<FailSubscribe/>}/>
+{/*  */}
+<Route path='/wishlist' element={<Wishlist/>}/>
 <Route path="*" element={<PageNotFound/>}/>
   </Routes>
   

@@ -1,31 +1,27 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { courseData } from '../../data'
 import Navigation from '../../components/Navigation'
 import { close, plus } from '../../assets/course'
 import EditCourseCard from '../../components/course/EditCourseCard'
-import arrow from '../../assets/course/arrowDowns.svg'
+
 import Pagination from '../../components/Pagination'
 import { Drawer } from 'antd'
 import CreateCourse from './CreateCourse'
+import { CourseContext } from '../../context api/CourseContext'
 
 
 
 const EditCourse = () => {
+  const{open,setOpen}=useContext(CourseContext)
+
     const [data,setData]=useState(courseData)
     const NavigationList=['Home','Your courses']
-    const [open, setOpen] = useState(false);
-  
-    const showDrawer = () => {
-      setOpen(true);
-    };
-    const onClose = () => {
-      setOpen(false);
-    };
+
 
   return (
    <section className='bg-[#fafafa]'>
 <Navigation list={NavigationList}/>
-<div className='flex flex-col gap-2 border-[1px] mx-4 bg-white rounded-md'>
+<div className='flex flex-col gap-2 md:border-[1px] mx-4 bg-white rounded-md'>
 <div className='items-center justify-between w-[100%] flex border-b-[1px] px-4 py-2'>
             
             <p className='text-[10px] md:text-[13px] text-[#525252] font-[700]'>Showing 1-100 of 2332 results</p>
@@ -42,20 +38,20 @@ const EditCourse = () => {
      
       
        </label>
-<button onClick={showDrawer}  className='bg-primary flex items-center gap-1 justify-center py-2 px-2 md:px-4 rounded-md font-md text-white hover:bg-violet-500 text-sm'><img src={plus} alt="" /> <span>Create course</span> </button>
+<button onClick={()=>setOpen(true)}  className='bg-primary flex items-center gap-1 justify-center py-2 px-2 md:px-4 rounded-md font-md text-white hover:bg-violet-500 text-sm'><img src={plus} alt="" /> <span>Create course</span> </button>
 
 
 {/*  */}
 <Drawer
       
         closable={false}
-        // onClose={onClose}
-        
+
+        onClose={open}
         open={open}
         width={`100%`}
      
       >
-   <CreateCourse onClose={onClose}/>
+   <CreateCourse/>
    
       </Drawer>
 
@@ -66,7 +62,7 @@ const EditCourse = () => {
       
         </div>
 
-<div className='flex flex-col gap-4 p-4'>
+<div className='flex flex-col gap-4 md:p-4'>
 
 
 {data.map((item)=>{

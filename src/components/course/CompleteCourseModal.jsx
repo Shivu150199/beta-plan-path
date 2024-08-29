@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { success } from '../../assets/pricing'
 import { Link } from 'react-router-dom'
+import { CourseContext } from '../../context api/CourseContext'
 
-const CompleteCourseModal = ({onClose}) => {
-
-const handleCloseModal=()=>{
-onClose()
-}
+const CompleteCourseModal = () => {
+  const {setOpen}=useContext(CourseContext)
+// const handleCloseModal=()=>{
+// onClose()
+// }
 
   return (
     <>
@@ -25,7 +26,7 @@ onClose()
     <form method="dialog">
       {/* if there is a button in form, it will close the modal */}
       {/* <button className="btn btn-sm btn-circle btn-ghost ">Close</button> */}
-      <button onClick={handleCloseModal} className='outline-btn border-[1px] border-primary'>View Course</button>
+      <button onClick={()=>setOpen(false)} className='outline-btn border-[1px] border-primary'>View Course</button>
     </form>
    
     </div>

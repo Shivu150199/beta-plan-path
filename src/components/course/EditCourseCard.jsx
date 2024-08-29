@@ -1,18 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { nanoid } from 'nanoid'
 import star from '../../assets/card/star.svg'
 import { Link } from 'react-router-dom'
 import { edit } from '../../assets/course'
+import { CourseContext } from '../../context api/CourseContext'
 
-const EditCourseCard = ({ title, credit, image, available, about, desc, rating, totalRating, id }) => {
+const EditCourseCard = ({ title, credit, image, available, about, desc, rating, totalRating, id}) => {
+    const {setOpen}=useContext(CourseContext)
     return (
-        <article className='p-1 border shadow-md flex rounded-lg  gap-4 flex-col md:flex-row'>
-            <div className='bg-slate-100 rounded-lg h-36 md:h-auto'>
+        <article className='p-1 border  flex rounded-lg  gap-4 flex-col md:flex-row'>
+            <Link to={`/edit-course/${id}`} className='bg-slate-100 rounded-lg h-36 md:h-auto'>
 
                 <img src={image} alt="" className='rounded h-full w-full object-cover object-left' />
-            </div>
-            <div className='p-2 flex flex-col gap-2 w-full'>
+            </Link>
+            <div className='flex flex-col gap-2'>
+
+
+
+
+            <Link to={`/edit-course/${id}`} className='p-2 flex flex-col gap-2 w-full'>
                 <h2 className='font-[700] text-[#31225C
     ] text-[18px]'>{title}</h2>
                 <div className='flex gap-4 items-center'>
@@ -49,16 +56,18 @@ const EditCourseCard = ({ title, credit, image, available, about, desc, rating, 
                 <p className='text-[
     #525252] text-[13px] font-[400]'>{desc.substring(0, 200)}...</p>
              
-                    <div className='flex'>
-
-                    <Link to={`/edit-course/${id}`} className='bg-white text-primary rounded-[4px] px-4 py-2 border-[1px] border-primary font-medium text-sm flex gap-2 items-center justify-center'><img src={edit} alt="" />
-                   <span>Edit Course</span>    
-                    </Link>
-                    </div>
+                
               
+            </Link>
+
+            <div className='flex'>
+
+<button onClick={()=>setOpen(true)}  className='bg-white text-primary rounded-[4px] px-4 py-2 border-[1px] border-primary font-medium text-sm flex gap-2 items-center justify-center ml-2 mb-2'><img src={edit} alt="" />
+<span>Edit Course</span>    
+</button>
+</div>
             </div>
-
-
+      
 
         </article>
     )

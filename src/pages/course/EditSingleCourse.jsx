@@ -1,20 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { courseData } from '../../data'
 import Navigation from '../../components/Navigation'
 import star from '../../assets/card/star.svg'
 import { nanoid } from 'nanoid'
 import { edit } from '../../assets/course'
-import { Tabs } from 'antd'
+import { Drawer, Tabs } from 'antd'
 import { CourseDesc, CourseInfo, UserReview } from '../../components/course'
+import { CourseContext } from '../../context api/CourseContext'
+import { CreateCourse } from '.'
 const EditSingleCourse = () => {
-  
+    const {setOpen,open}=useContext(CourseContext)
     const onChange = (key) => {
         console.log(key);
       };
 
     const { id } = useParams()
-    console.log(id)
+ 
     const navigationList = ['Home', 'Course']
     const [navList, setList] = useState(navigationList)
     const [data, setData] = useState(null)
@@ -102,9 +104,9 @@ console.log(filteredData)
                     </ul>
                     <div className='flex'>
 
-                        <Link to={`/edit-course/`} className='bg-white text-primary rounded-[4px] px-4 py-2 border-[1px] border-primary font-medium text-sm flex gap-2 items-center justify-center'><img src={edit} alt="" />
+                    <button onClick={()=>setOpen(true)} className='bg-white text-primary rounded-[4px] px-4 py-2 border-[1px] border-primary font-medium text-sm flex gap-2 items-center justify-center'><img src={edit} alt="" />
                             <span>Edit Course</span>
-                        </Link>
+                        </button>
                     </div>
                 </div>
 
@@ -127,9 +129,9 @@ console.log(filteredData)
                     </ul>
                     <div className='flex'>
 
-                        <Link to={`/edit-course/`} className='bg-white text-primary rounded-[4px] px-4 py-2 border-[1px] border-primary font-medium text-sm flex gap-2 items-center justify-center'><img src={edit} alt="" />
+                        <button onClick={()=>setOpen(true)} className='bg-white text-primary rounded-[4px] px-4 py-2 border-[1px] border-primary font-medium text-sm flex gap-2 items-center justify-center'><img src={edit} alt="" />
                             <span>Edit Course</span>
-                        </Link>
+                        </button>
                     </div>
                 </div>
 
@@ -153,7 +155,18 @@ console.log(filteredData)
             </div>
 
 
+            <Drawer
+      
+      closable={false}
 
+      onClose={open}
+      open={open}
+      width={`100%`}
+   
+    >
+ <CreateCourse/>
+ 
+    </Drawer>
 
         </section>
     )
