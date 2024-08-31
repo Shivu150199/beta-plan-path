@@ -1,15 +1,23 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { courseData } from "../../data";
+import { courseData, reviewData, reviewObj } from "../../data";
 import Navigation from "../../components/Navigation";
 import star from "../../assets/card/star.svg";
 import { nanoid } from "nanoid";
 import { edit } from "../../assets/course";
 import { Drawer, Tabs } from "antd";
-import { CourseDesc, CourseInfo, UserReview } from "../../components/course";
+import {
+    CourseDesc,
+    CourseInfo,
+    QuestionAnswer,
+    UserReview,
+} from "../../components/course";
 import { CourseContext } from "../../context api/CourseContext";
 import { CreateCourse } from ".";
+import AddQuestionModal from "../../components/course/AddQuestionModal";
+
 const EditSingleCourse = () => {
+    const [reviewList, setReviewList] = useState(reviewObj);
     const { setOpen, open } = useContext(CourseContext);
     const onChange = (key) => {
         console.log(key);
@@ -19,7 +27,6 @@ const EditSingleCourse = () => {
 
     const navigationList = ["Home", "Course"];
     const [navList, setList] = useState(navigationList);
-    const [data, setData] = useState(null);
 
     const filteredData = courseData.filter((item) => item.id == id);
 
@@ -47,7 +54,28 @@ const EditSingleCourse = () => {
         {
             key: "4",
             label: "Question & Answer",
-            children: "question",
+            children: (
+                <section>
+                    <header className="flex items-center justify-between mt-2 py-4">
+                        <h2 className="text-[18px] font-bold text-dark_violet">
+                            Question & Answer <span>(14)</span>
+                        </h2>
+                        <AddQuestionModal />
+                    </header>
+                    <div className="border-[1px] md:w-[70%] rounded-md">
+                        {reviewObj.map((item) => {
+                            const id = nanoid();
+                            return (
+                                <QuestionAnswer
+                                    key={id}
+                                    question={item.question}
+                                    answer={item.answer}
+                                />
+                            );
+                        })}
+                    </div>
+                </section>
+            ),
         },
     ];
 

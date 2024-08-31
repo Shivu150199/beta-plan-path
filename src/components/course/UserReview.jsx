@@ -3,7 +3,6 @@ import WriteReview from "./WriteReview";
 import { emptystar, fillstar, showmoreIcon } from "../../assets/course";
 import { nanoid } from "nanoid";
 import { CourseContext } from "../../context api/CourseContext";
-const colors = ["#525252", "#525252", "#170142"];
 
 const UserReview = () => {
     const { review } = useContext(CourseContext);
@@ -19,7 +18,6 @@ const UserReview = () => {
             <div className="grid grid-cols-1 md:grid-cols-[1.5fr,1fr] mt-6 md:p-2 gap-4">
                 <div className="review flex flex-col gap-2 order-1 md:order-none">
                     {review.map((item, i) => {
-                        console.log(i % colors.length);
                         return (
                             <div
                                 key={item.id}
@@ -172,10 +170,16 @@ const UserReview = () => {
                 </div>
             </div>
 
-<div >
-  <button className="outline-btn flex items-center justify-center gap-2 hover:text-violet-600"><span>Show more</span>  <img src={showmoreIcon} alt="showmore icon" className="mt-1"/></button>
-</div>
-
+            <div>
+                <button className="outline-btn flex items-center justify-center gap-2 hover:text-violet-600">
+                    <span>Show more</span>{" "}
+                    <img
+                        src={showmoreIcon}
+                        alt="showmore icon"
+                        className="mt-1"
+                    />
+                </button>
+            </div>
         </section>
     );
 };

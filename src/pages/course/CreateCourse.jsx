@@ -274,7 +274,7 @@ const CreateCourse = () => {
                 ) : (
                     <>
                         {page == "faq" && faq && (
-                            <div className="border-t-2 bg-white">
+                            <div className="border-t-2 bg-white h-[68vh] overflow-auto no-scrollbar">
                                 <FaqForm
                                     faqListvalue={faqList}
                                     faqListSet={setFaqList}

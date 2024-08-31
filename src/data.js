@@ -234,3 +234,33 @@ export const reviewData = [
             "Lorem ipsum odor amet, consectetuer adipiscing elit. Dapibus varius facilisi ornare montes dignissim; a hendrerit. Venenatis at consectetur risus condimentum lacus mattis vivamus. Platea id porttitor neque vehicula montes fringilla. Amet lobortis sodales vestibulum tincidun",
     },
 ];
+
+export const reviewObj = [
+    {
+        id: 1,
+        question: "What background knowledge is necessary?",
+        answer: [
+            {
+                username: "anonymous",
+                createdAt: "12 Jul 2024",
+                ans: "Lorem ipsum odor amet, consectetuer adipiscing elit. Dapibus varius facilisi ornare monte",
+            },
+            {
+                username: "anonymous",
+                createdAt: "12 Jul 2024",
+                ans: "Lorem ipsum odor amet, consectetuer adipiscing elit. Dapibus varius facilisi ornare monte",
+            },
+        ],
+    },
+    {
+        id: 2,
+        question: "Why background knowledge is necessary?",
+        answer: [
+            {
+                username: "anonymous",
+                createdAt: "12 Jul 2024",
+                ans: "Lorem ipsum odor amet, consectetuer adipiscing elit. Dapibus varius facilisi ornare monte",
+            },
+        ],
+    },
+];

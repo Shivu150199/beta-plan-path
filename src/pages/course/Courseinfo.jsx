@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { courseData } from "../../data";
+import { courseData, reviewObj } from "../../data";
 import Navigation from "../../components/Navigation";
 import star from "../../assets/card/star.svg";
 import { nanoid } from "nanoid";
@@ -14,6 +14,7 @@ import {
 } from "../../components/course";
 import { CourseContext } from "../../context api/CourseContext";
 import { CreateCourse } from ".";
+import AddQuestionModal from "../../components/course/AddQuestionModal";
 const Courseinfo = () => {
     const { setOpen, open } = useContext(CourseContext);
     const onChange = (key) => {
@@ -51,7 +52,28 @@ const Courseinfo = () => {
         {
             key: "4",
             label: "Question & Answer",
-            children: <QuestionAnswer />,
+            children: (
+                <section>
+                    <header className="flex items-center justify-between mt-2 py-4">
+                        <h2 className="text-[18px] font-bold text-dark_violet">
+                            Question & Answer <span>(14)</span>
+                        </h2>
+                        <AddQuestionModal />
+                    </header>
+                    <div className="border-[1px] md:w-[70%] rounded-md">
+                        {reviewObj.map((item) => {
+                            const id = nanoid();
+                            return (
+                                <QuestionAnswer
+                                    key={id}
+                                    question={item.question}
+                                    answer={item.answer}
+                                />
+                            );
+                        })}
+                    </div>
+                </section>
+            ),
         },
     ];
 
