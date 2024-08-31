@@ -15,7 +15,7 @@ import Filter from "./Filter";
 import QuestionAnswer from "./QuestionAnswer";
 import QnAList from "./QnAList";
 import WriteAnswer from "./WriteAnswer";
-
+import FilterList from "./FilterList";
 export {
     EditCourse,
     CourseInfo,
@@ -34,4 +34,5 @@ export {
     QuestionAnswer,
     QnAList,
     WriteAnswer,
+    FilterList,
 };

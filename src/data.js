@@ -193,7 +193,7 @@ export const filterObj = [
         ],
     },
     {
-        id: 1,
+        id: 3,
         title: "Available Credit",
         filterType: [
             { name: "Regular", total: 322 },

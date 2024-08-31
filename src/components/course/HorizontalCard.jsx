@@ -17,28 +17,22 @@ const HorizontalCard = ({
 }) => {
     const { isVertical, setIsVertical } = useContext(CourseContext);
     return (
-        <div
-            className={`flex ${
-                isVertical ? "flex-col gap-2" : "flex-row gap-4"
-            } border-[1px] rounded`}
-        >
-            <div
-                className={`${
-                    isVertical ? "w-full h-[15rem]" : "w-[20rem] h-[full]"
-                }  ' overflow-hidden rounded-lg'`}
+        <div className=" flex flex-col gap-4  border-[1px] p-1 rounded-md">
+            <Link
+                to={`/course/${id}`}
+                role="div"
+                className=" rounded-md w-full"
             >
                 <img
                     src={image}
                     alt=""
-                    className={`${
-                        isVertical ? "w-full" : "h-full object-cover"
-                    } rounded-[3px]`}
+                    className="max-h-[15rem] w-full object-cover rounded-md"
                 />
-            </div>
+            </Link>
 
             <Link
                 to={`/course/${id}`}
-                className="p-2 flex flex-col gap-2 w-full"
+                className="px-2 flex flex-col w-full gap-2"
             >
                 <h2 className="font-[700] text-[#31225C] text-[18px]">
                     {title}
@@ -66,7 +60,7 @@ const HorizontalCard = ({
                         })}
                     </ul>
                     <span className="text-[#31225C] font-[400] text-[14px]">
-                        (3022)
+                        ({totalRating})
                     </span>
                 </div>
                 <ul className="flex flex-wrap gap-x-4">
@@ -105,29 +99,30 @@ const HorizontalCard = ({
                 >
                     {desc.substring(0, 100)}...
                 </p>
-
-                <div
-                    className={`${
-                        isVertical ? "justify-between" : "justify-start"
-                    } flex px-2 gap-4 my-2 flex-row`}
-                >
-                    <div className={`form-control ${isVertical?'':'order-1'}`}>
-                        <label className="label cursor-pointer gap-3">
-                            <input
-                                defaultChecked
-                                type="checkbox"
-                                className="w-[20px] h-[20px] border-[#D0D0D0] border-[1px] "
-                            />
-                            <span className="text-[#525252] font-[500] text-[14px]">
-                                Compare
-                            </span>
-                        </label>
-                    </div>
-                    <button className={`bg-primary text-white rounded-[4px] px-2 font-[500] `}>
-                        Add to Cart
-                    </button>
-                </div>
             </Link>
+            <div
+                className={`${
+                    isVertical ? "justify-between" : "justify-start"
+                } flex  gap-4 flex-row my-2 px-2`}
+            >
+                <div className={`form-control ${isVertical ? "" : "order-1"}`}>
+                    <label className="label cursor-pointer gap-3">
+                        <input
+                            defaultChecked
+                            type="checkbox"
+                            className="w-[20px] h-[20px] border-[#D0D0D0] border-[1px] "
+                        />
+                        <span className="text-[#525252] font-[500] text-[14px]">
+                            Compare
+                        </span>
+                    </label>
+                </div>
+                <button
+                    className={`bg-primary text-white rounded-[4px] px-2 font-[500] `}
+                >
+                    Add to Cart
+                </button>
+            </div>
         </div>
     );
 };

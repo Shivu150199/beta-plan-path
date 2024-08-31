@@ -12,26 +12,20 @@ import { CourseCardList, CourseFilter, Filter } from "../../components/course";
 import { filterIcon } from "../../assets/course";
 
 const Course = () => {
-    const { showFilter, onCloseFilter, openFilter,setIsVertical,formData } = useContext(CourseContext);
-   
-  
+    const { showFilter, onCloseFilter, openFilter, setIsVertical, formData } =
+        useContext(CourseContext);
 
     const { breadCrumbList } = useContext(CourseContext);
 
-
     useEffect(() => {
-        // Function to check if the viewport is less than 768px
         const handleResize = () => {
-            setIsVertical(window.innerWidth < 1000);
+            setIsVertical(window.innerWidth < 1024);
         };
 
-        // Initial check when the component mounts
         handleResize();
 
-        // Add event listener for window resize
         window.addEventListener("resize", handleResize);
 
-        // Cleanup the event listener on component unmount
         return () => {
             window.removeEventListener("resize", handleResize);
         };
@@ -42,7 +36,7 @@ const Course = () => {
     };
 
     return (
-        <section className="bg-creambg p-2">
+        <section className="bg-creambg px-2 flex flex-col">
             <BreadCrumb list={breadCrumbList} />
             <div className="flex  items-center justify-between border-[2px] p-2 rounded-md border-[#7d7d7d] md:hidden mt-4">
                 <input
@@ -68,12 +62,13 @@ const Course = () => {
                     <span className="text-primary font-md tracking-wide text-[14px]">
                         Filter
                     </span>
-                    {formData&&    <span className="w-3 h-3 bg-red-700 absolute top-[-5px] right-[-5px] rounded-full border-[2px] border-white"></span>}
-                
+                    {formData && (
+                        <span className="w-3 h-3 bg-red-700 absolute top-[-5px] right-[-5px] rounded-full border-[2px] border-white"></span>
+                    )}
                 </button>
             </div>
 
-            <div className="flex md:border-[1px] rounded-lg bg-white md:mx-4">
+            <div className="flex md:border-[1px] rounded-lg bg-white md:mx-4 h-[72vh]">
                 <CourseFilter />
                 <CourseCardList />
             </div>
@@ -84,10 +79,8 @@ const Course = () => {
                 closable={false}
                 onClose={onCloseFilter}
                 open={openFilter}
-               
             >
-
-<Filter/>
+                <Filter />
             </Drawer>
             <Pagination />
         </section>

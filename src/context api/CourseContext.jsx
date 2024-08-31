@@ -47,7 +47,7 @@ export const CourseProvider = ({ children }) => {
             children: "",
         },
     ];
-    const [isVertical, setIsVertical] = useState(true); //to change view of card
+    const [isVertical, setIsVertical] = useState(false); //to change view of card
     const onChangeTabs = (key) => {
         //  const filterData=courseData.filter((item)=>)
     };
