@@ -6,10 +6,15 @@ import star from "../../assets/card/star.svg";
 import { nanoid } from "nanoid";
 import { edit } from "../../assets/course";
 import { Drawer, Tabs } from "antd";
-import { CourseDesc, CourseInfo, UserReview } from "../../components/course";
+import {
+    CourseDesc,
+    CourseInfo,
+    QuestionAnswer,
+    UserReview,
+} from "../../components/course";
 import { CourseContext } from "../../context api/CourseContext";
 import { CreateCourse } from ".";
-const EditSingleCourse = () => {
+const Courseinfo = () => {
     const { setOpen, open } = useContext(CourseContext);
     const onChange = (key) => {
         console.log(key);
@@ -19,7 +24,6 @@ const EditSingleCourse = () => {
 
     const navigationList = ["Home", "Course"];
     const [navList, setList] = useState(navigationList);
-    const [data, setData] = useState(null);
 
     const filteredData = courseData.filter((item) => item.id == id);
 
@@ -47,12 +51,12 @@ const EditSingleCourse = () => {
         {
             key: "4",
             label: "Question & Answer",
-            children: "question",
+            children: <QuestionAnswer />,
         },
     ];
 
     return (
-        <section className="bg-creambg">
+        <section className="bg-creambg ">
             <Navigation list={navList} />
             <div className="maindiv bg-white">
                 {/*  */}
@@ -117,12 +121,8 @@ const EditSingleCourse = () => {
                                 })}
                             </ul>
                             <div className="flex">
-                                <button
-                                    onClick={() => setOpen(true)}
-                                    className="bg-white text-primary rounded-[4px] px-4 py-2 border-[1px] border-primary font-medium text-sm flex gap-2 items-center justify-center"
-                                >
-                                    <img src={edit} alt="" />
-                                    <span>Edit Course</span>
+                                <button className="primary-btn rounded-[4px] px-4 py-2 border-[1px] border-primary font-medium text-sm flex gap-2 items-center justify-center">
+                                    <span>Add to cart</span>
                                 </button>
                             </div>
                         </div>
@@ -143,12 +143,8 @@ const EditSingleCourse = () => {
                         })}
                     </ul>
                     <div className="flex">
-                        <button
-                            onClick={() => setOpen(true)}
-                            className="bg-white text-primary rounded-[4px] px-4 py-2 border-[1px] border-primary font-medium text-sm flex gap-2 items-center justify-center"
-                        >
-                            <img src={edit} alt="" />
-                            <span>Edit Course</span>
+                        <button className="primary-btn rounded-[4px] px-4 py-2 border-[1px] border-primary font-medium text-sm flex gap-2 items-center justify-center">
+                            <span>Add to cart</span>
                         </button>
                     </div>
                 </div>
@@ -171,4 +167,4 @@ const EditSingleCourse = () => {
     );
 };
 
-export default EditSingleCourse;
+export default Courseinfo;

@@ -47,8 +47,8 @@ const Navbar = () => {
 
 
     <div className=' bg-[#f4f4f4] gap-2 items-center rounded-[8px] px-4 pl-2 w-96 hidden lg:flex'>
-      <div className='flex items-center justify-center py-2 px-4 border-r-[2px] border-light_gray'>
-      <select name="" id="" className='bg-transparent  outline-none item-select'>
+      <div className='flex items-center justify-center py-2 pl-4 border-r-[2px] border-light_gray'>
+      <select name="" id="" className='bg-transparent  outline-none item-select w-20'>
         <option value="">All</option>
         <option value="">Math</option>
         <option value="">English</option>

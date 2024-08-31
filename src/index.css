@@ -111,6 +111,10 @@ accent-color:#4a00ff;
     background-color: #4a00ff !important; /* Change this to your desired color */
   }
 
+.ant-tag{
+  border-radius: 10px;
+}
+
 /* react quill css */
 .ql-toolbar{
 border-top-left-radius: 8px;

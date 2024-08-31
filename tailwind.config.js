@@ -15,10 +15,13 @@ export default {
         placeholder:'#8A8A8A', // Example of a custom primary color
         success:'#2FAF47',
         failure:'#EF0000',
-        creambg:'#f5f5f5'
+        creambg:'#f5f5f5',
+        disable_btn:'#BDBDBD',
+        paraColor:'#525252'
       },
       screens: {
         'xs': {'max': '300px'},  // Custom screen size for up to 300px
+        'xm': {'min': '500px'},  // Custom screen size for up to 300px
       },
     },
   },

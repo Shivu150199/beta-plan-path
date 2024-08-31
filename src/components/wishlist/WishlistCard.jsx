@@ -12,7 +12,7 @@ const WishlistCard = () => {
         return <EmptyList/>
     }
   return (
-    <div className='p-4 flex items-center justify-center gap-4 bg-white w-[100%]  '>
+<div className='p-4 flex items-center justify-center gap-4 bg-white w-[100%]'>
     <div className='md:border-[1px] rounded-md w-full flex flex-col p-2 gap-4'>
  <h2 className='text-[22px] font-bold text-dark_violet'>Wishlist ({wishlistData.length})</h2>
 

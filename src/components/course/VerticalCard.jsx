@@ -1,16 +1,14 @@
 import React from 'react'
-import dsImage from '../assets/card/ds.svg'
-import { nanoid } from 'nanoid'
-import star from '../assets/card/star.svg'
-import { Link } from 'react-router-dom'
 
-const VerticalCard = ({title,credit,image,available,about,desc,rating,totalRating}) => {
+import { nanoid } from 'nanoid'
+
+import { Link } from 'react-router-dom'
+import { emptystar, fillstar } from '../../assets/course'
+
+const VerticalCard = ({title,credit,image,available,about,desc,rating,totalRating,}) => {
   return (
     <Link to='/course/xyz' className='p-1 border shadow-lg flex rounded-lg '>
-        <div className='bg-slate-200 rounded-lg '>
-
-    <img src={image} alt="" className='rounded h-full w-full object-cover object-left' />
-        </div>
+     
     <div className='p-2 flex flex-col gap-1 w-full'>
         <h2 className='font-[700] text-[#31225C
     ] text-[18px]'>{title}</h2>
@@ -18,21 +16,18 @@ const VerticalCard = ({title,credit,image,available,about,desc,rating,totalRatin
             <span className='text-[#31225C] font-[700] text-[14px]'>{rating}</span>
             <ul className='flex items-center gap-1'>
 
-                <li>
-                    <img src={star} alt="" />
-                </li>
-                <li>
-                    <img src={star} alt="" />
-                </li>
-                <li>
-                    <img src={star} alt="" />
-                </li>
-                <li>
-                    <img src={star} alt="" />
-                </li>
-                <li>
-                    <img src={star} alt="" />
-                </li>
+            {[...Array(Math.floor(rating))].map(()=>{
+    const id=nanoid()
+  return  <li key={id}>
+    <img src={fillstar} alt="star" />
+</li>
+})}
+{[...Array(5-Math.floor(rating))].map(()=>{
+    const id=nanoid()
+  return  <li key={id}>
+    <img src={emptystar} alt="star" />
+</li>
+})}
             </ul>
             <span className='text-[#31225C] font-[400] text-[14px]'>({totalRating})</span>
         </div>
