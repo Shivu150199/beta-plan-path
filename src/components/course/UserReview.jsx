@@ -8,7 +8,7 @@ const UserReview = () => {
     const { review } = useContext(CourseContext);
     return (
         <section>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between px-2">
                 <h2 className="text-[22px] font-bold text-dark_violet">
                     Review (93492)
                 </h2>

@@ -36,7 +36,7 @@ const Course = () => {
     };
 
     return (
-        <section className="bg-creambg px-2 flex flex-col">
+        <section className="bg-creambg px-2 flex flex-col w-[100%] h-[calc(100vh-64px)] relative">
             <BreadCrumb list={breadCrumbList} />
             <div className="flex  items-center justify-between border-[2px] p-2 rounded-md border-[#7d7d7d] md:hidden mt-4">
                 <input
@@ -68,11 +68,12 @@ const Course = () => {
                 </button>
             </div>
 
-            <div className="flex md:border-[1px] rounded-lg bg-white md:mx-4 h-[72vh]">
+            <div className="flex md:border-[1px] rounded-lg bg-white md:mx-4 md:h-[calc(100vh-160px)] h-[calc(100vh-212px)]">
                 <CourseFilter />
                 <CourseCardList />
             </div>
 
+            <Pagination />
             <Drawer
                 width="100%"
                 placement="right"
@@ -82,7 +83,6 @@ const Course = () => {
             >
                 <Filter />
             </Drawer>
-            <Pagination />
         </section>
     );
 };

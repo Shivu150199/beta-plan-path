@@ -16,10 +16,10 @@ const EditCourse = () => {
     const NavigationList = ["Home", "Your courses"];
 
     return (
-        <section className="bg-[#fafafa]">
+        <section className="bg-[#fafafa] px-2 flex flex-col w-[100%] h-[calc(100vh-64px)] relative">
             <Navigation list={NavigationList} />
-            <div className="flex flex-col gap-2 md:border-[1px] mx-4 bg-white rounded-md">
-                <div className="items-center justify-between w-[100%] flex border-b-[1px] px-4 py-2">
+            <div className="flex flex-col gap-2 md:border-[1px] mx-4 bg-white rounded-md h-[calc(100vh-112px)] overflow-auto no-scrollbar relative">
+                <div className="items-center justify-between w-[100%] flex border-b-[1px] px-4 py-2 sticky top-0 bg-white">
                     <p className="text-[10px] md:text-[13px] text-[#525252] font-[700]">
                         Showing 1-100 of 2332 results
                     </p>
@@ -31,7 +31,7 @@ const EditCourse = () => {
                             <select
                                 name=""
                                 id=""
-                                className="item-select py-1 px-2 border-[1px] border-primary text-primary outline-none rounded-md text-[13px] font-[500] w-14"
+                                className="item-select py-1 px-2 border-[1px] border-primary text-primary outline-none rounded-[4px] text-[13px] font-[500] w-14"
                             >
                                 <option value="">25</option>
                                 <option value="">26</option>

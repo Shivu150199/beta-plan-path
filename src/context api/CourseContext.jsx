@@ -60,7 +60,7 @@ export const CourseProvider = ({ children }) => {
     const handleFilterChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value });
     };
-    console.log(formData);
+
     const [rating, setRating] = useState(0); // State to hold the current rating
 
     return (

@@ -1,14 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { search } from "../../assets/course";
 import { nanoid } from "nanoid";
+import { CourseContext } from "../../context api/CourseContext";
 
-const FilterList = ({ title, filtersList = [] }) => {
+const FilterList = ({ title, filtersList }) => {
     const [showAll, setShowAll] = useState(false);
 
+    // console.log(filtersList);
     const itemToshow = showAll ? filtersList : filtersList.slice(0, 4);
     const handleToggleShow = () => {
         setShowAll((prevShowAll) => !prevShowAll);
     };
+
+    // const [localFilters, setLocalFilters] = useState(
+    //     filtersList.map((filter) => ({ ...filter }))
+    // );
+
+    // const handleCheckboxChange = (id) => {
+    //     const updatedFilters = itemToshow.map((filter) =>
+    //         filter.id === id ? { ...filter, checked: !filter.checked } : filter
+    //     );
+    // };
 
     return (
         <div className="p-2 border-b-[1px] border-[#D0D0D0]">
@@ -24,16 +36,19 @@ const FilterList = ({ title, filtersList = [] }) => {
                     const id = nanoid();
                     return (
                         <li key={id} className="py-2">
-                            <label className="flex items-center gap-2">
+                            <label
+                                className="flex items-center gap-2"
+                                htmlFor={name}
+                            >
                                 <input
-                                    onChange={() => {
-                                        "checked";
-                                    }}
+                                    // checked
                                     type="checkbox"
-                                    className="w-[20px] h-[20px] border-[#D0D0D0] border-[1px]"
+                                    className="w-[20px] h-[20px] border-[#D0D0D0] border-[1px] "
+                                    id={name}
+                                    // onChange={handleCourseFilter}
                                 />
                                 <span className="font-[400] text-[14px]">
-                                    {name} <sub>({total})</sub>
+                                    {name} <span>({total})</span>
                                 </span>
                             </label>
                         </li>

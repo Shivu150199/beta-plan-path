@@ -4,7 +4,7 @@ import { courseData, reviewObj } from "../../data";
 import Navigation from "../../components/Navigation";
 import star from "../../assets/card/star.svg";
 import { nanoid } from "nanoid";
-import { edit } from "../../assets/course";
+import { edit, write } from "../../assets/course";
 import { Drawer, Tabs } from "antd";
 import {
     CourseDesc,
@@ -15,6 +15,7 @@ import {
 import { CourseContext } from "../../context api/CourseContext";
 import { CreateCourse } from ".";
 import AddQuestionModal from "../../components/course/AddQuestionModal";
+import WriteReview from "../../components/course/WriteReview";
 const Courseinfo = () => {
     const { setOpen, open } = useContext(CourseContext);
     const onChange = (key) => {
@@ -54,13 +55,13 @@ const Courseinfo = () => {
             label: "Question & Answer",
             children: (
                 <section>
-                    <header className="flex items-center justify-between mt-2 py-4">
+                    <header className="flex items-center justify-between mt-2 py-4 md:w-[70%] ml-4">
                         <h2 className="text-[18px] font-bold text-dark_violet">
                             Question & Answer <span>(14)</span>
                         </h2>
                         <AddQuestionModal />
                     </header>
-                    <div className="border-[1px] md:w-[70%] rounded-md">
+                    <div className="border-[1px] md:w-[70%] rounded-md ml-4">
                         {reviewObj.map((item) => {
                             const id = nanoid();
                             return (
@@ -78,9 +79,9 @@ const Courseinfo = () => {
     ];
 
     return (
-        <section className="bg-creambg ">
+        <section className="bg-creambg px-2 flex flex-col w-[100%] h-[calc(100vh-64px)] relative">
             <Navigation list={navList} />
-            <div className="maindiv bg-white">
+            <div className="maindiv bg-creambg h-[calc(100vh-116px)] overflow-auto relative no-scrollbar">
                 {/*  */}
 
                 <div className=" gap-4 border-y-[1px] p-4 flex">
@@ -173,8 +174,17 @@ const Courseinfo = () => {
 
                 {/*  */}
 
-                <div className="p-4 bg-white">
+                <div className="  bg-white">
                     <Tabs
+                        tabBarStyle={{
+                            borderBottom: "1px solid #e6f4ff",
+                            position: "sticky",
+                            top: "0",
+                            background: "white",
+                            zIndex: 10,
+                            marginTop: 0,
+                            paddingLeft: "10px",
+                        }}
                         defaultActiveKey="1"
                         items={items}
                         onChange={onChange}
@@ -185,6 +195,11 @@ const Courseinfo = () => {
             <Drawer closable={false} onClose={open} open={open} width={`100%`}>
                 <CreateCourse />
             </Drawer>
+
+            <div className="sticky bottom-0 flex items-center justify-end gap-4 p-2 border-t-[1px]">
+                <WriteReview />
+                <button className="primary-btn">Add to cart</button>
+            </div>
         </section>
     );
 };

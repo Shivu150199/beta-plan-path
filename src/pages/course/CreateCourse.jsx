@@ -43,6 +43,10 @@ const CreateCourse = () => {
             setPageNumber((prevPage) => prevPage - 1);
         }
     };
+    useEffect(() => {
+        setPageNumber(0);
+    }, []);
+    console.log(pageNumber);
     return (
         <>
             <section className="w-[100%] flex flex-col bg-creambg">
@@ -51,7 +55,12 @@ const CreateCourse = () => {
                         <h2 className="text-2xl font-bold text-dark_violet ">
                             Create course
                         </h2>
-                        <button onClick={() => setOpen(false)}>
+                        <button
+                            onClick={() => {
+                                setOpen(false);
+                                setPageNumber(0);
+                            }}
+                        >
                             <img src={close} alt="close icon" />
                         </button>
                     </div>
@@ -267,8 +276,8 @@ const CreateCourse = () => {
 
                 {/*  */}
 
-                {faqList ? (
-                    <div className="border-t-2 bg-white w-full">
+                {page == "faq" && faqList ? (
+                    <div className="border-t-2 bg-white w-full h-[66vh] overflow-auto no-scrollbar">
                         <FaqList />
                     </div>
                 ) : (

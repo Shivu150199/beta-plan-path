@@ -80,9 +80,9 @@ const EditSingleCourse = () => {
     ];
 
     return (
-        <section className="bg-creambg">
+        <section className="bg-creambg px-2 flex flex-col w-[100%] h-[calc(100vh-64px)] relative">
             <Navigation list={navList} />
-            <div className="maindiv bg-white">
+            <div className="maindiv bg-creambg h-[calc(100vh-116px)] overflow-auto relative no-scrollbar">
                 {/*  */}
 
                 <div className=" gap-4 border-y-[1px] p-4 flex">
@@ -183,8 +183,17 @@ const EditSingleCourse = () => {
 
                 {/*  */}
 
-                <div className="p-4 bg-white">
+                <div className=" bg-white">
                     <Tabs
+                        tabBarStyle={{
+                            borderBottom: "1px solid #e6f4ff",
+                            position: "sticky",
+                            top: "0",
+                            background: "white",
+                            zIndex: 10,
+                            marginTop: 0,
+                            paddingLeft: "10px",
+                        }}
                         defaultActiveKey="1"
                         items={items}
                         onChange={onChange}
