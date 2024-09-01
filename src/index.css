@@ -100,11 +100,11 @@ accent-color:#4a00ff;
     border-color: #8A8A8A !important;
 }
 
-:where(.css-dev-only-do-not-override-1gwfwyx).ant-steps .ant-steps-item-process .ant-steps-item-icon {
+.ant-steps .ant-steps-item-process .ant-steps-item-icon {
   background-color:#4a00ff  !important; /* Add !important to ensure it overrides default styles */
   border-color: #4a00ff !important;     /* Also change the border color if needed */
 }
-:where(.css-dev-only-do-not-override-1gwfwyx).ant-steps .ant-steps-item-finish .ant-steps-item-icon {
+.ant-steps .ant-steps-item-finish .ant-steps-item-icon {
   background-color: #797a7a;
   border-color: #e6f4ff;
 }
