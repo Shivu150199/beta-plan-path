@@ -264,3 +264,42 @@ export const reviewObj = [
         ],
     },
 ];
+
+export const courseAddedToCart = [
+    {
+        id: 1,
+        subject: "General physics",
+        about: {
+            credit: "4.00",
+            type: "Core",
+        },
+        liked: false,
+    },
+    {
+        id: 2,
+        subject: "General physics",
+        about: {
+            credit: "4.00",
+            type: "Core",
+        },
+        liked: false,
+    },
+    {
+        id: 3,
+        subject: "General physics",
+        about: {
+            credit: "4.00",
+            type: "Core",
+        },
+        liked: false,
+    },
+    {
+        id: 4,
+        subject: "General physics",
+        about: {
+            credit: "4.00",
+            type: "Core",
+        },
+        liked: false,
+    },
+];

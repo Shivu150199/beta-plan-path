@@ -39,6 +39,7 @@ import {
 import { Wishlist } from "./pages/wishlist";
 import { CourseInfo } from "./components/course";
 import Courseinfo from "./pages/course/Courseinfo";
+import { CartProvider } from "./context api/CartContext";
 
 function App() {
     return (
@@ -80,7 +81,14 @@ function App() {
 
                 <Route path="/myprofile" element={<MyProfile />} />
                 {/*  */}
-                <Route path="/cart" element={<Cart />} />
+                <Route
+                    path="/cart"
+                    element={
+                        <CartProvider>
+                            <Cart />
+                        </CartProvider>
+                    }
+                />
                 <Route path="/my-path" element={<Path />} />
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/payment" element={<Payment />} />
