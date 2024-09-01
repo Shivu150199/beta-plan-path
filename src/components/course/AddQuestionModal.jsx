@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const AddQuestionModal = () => {
     const [query, setQuery] = useState("");
-    console.log(Boolean(query));
+
     return (
         <>
             {/* Open the modal using document.getElementById('ID').showModal() method */}

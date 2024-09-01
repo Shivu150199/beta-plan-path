@@ -19,9 +19,7 @@ import AddQuestionModal from "../../components/course/AddQuestionModal";
 const EditSingleCourse = () => {
     const [reviewList, setReviewList] = useState(reviewObj);
     const { setOpen, open } = useContext(CourseContext);
-    const onChange = (key) => {
-        console.log(key);
-    };
+    const onChange = (key) => {};
 
     const { id } = useParams();
 
@@ -30,7 +28,6 @@ const EditSingleCourse = () => {
 
     const filteredData = courseData.filter((item) => item.id == id);
 
-    console.log(filteredData);
     useEffect(() => {
         setList([...navigationList, filteredData[0].title]);
     }, []);

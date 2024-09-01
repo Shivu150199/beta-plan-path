@@ -18,9 +18,7 @@ import AddQuestionModal from "../../components/course/AddQuestionModal";
 import WriteReview from "../../components/course/WriteReview";
 const Courseinfo = () => {
     const { setOpen, open } = useContext(CourseContext);
-    const onChange = (key) => {
-        console.log(key);
-    };
+    const onChange = (key) => {};
 
     const { id } = useParams();
 
@@ -29,7 +27,6 @@ const Courseinfo = () => {
 
     const filteredData = courseData.filter((item) => item.id == id);
 
-    console.log(filteredData);
     useEffect(() => {
         setList([...navigationList, filteredData[0].title]);
     }, []);

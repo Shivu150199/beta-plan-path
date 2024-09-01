@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const CourseDesc = ({ courseDescription }) => {
-    // console.log(courseDescription)
     return (
         <div className="p-4">
             <h2 className="text-[#31225C] font-[700] text-[22px]">
