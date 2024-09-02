@@ -303,3 +303,82 @@ export const courseAddedToCart = [
         liked: false,
     },
 ];
+
+export const qnaData = [
+    {
+        id: 1,
+        question: "What background knowledge is necessary?",
+        answer: [
+            {
+                username: "anonymous",
+                createdAt: "12 Jul 2024",
+                ans: "Lorem ipsum odor amet, consectetuer adipiscing elit. Dapibus varius facilisi ornare monte",
+            },
+            {
+                username: "anonymous",
+                createdAt: "12 Jul 2024",
+                ans: "Lorem ipsum odor amet, consectetuer adipiscing elit. Dapibus varius facilisi ornare monte",
+            },
+        ],
+    },
+    {
+        id: 2,
+        question: "Why background knowledge is necessary?",
+        answer: [
+            {
+                username: "anonymous",
+                createdAt: "12 Jul 2024",
+                ans: "Lorem ipsum odor amet, consectetuer adipiscing elit. Dapibus varius facilisi ornare monte",
+            },
+        ],
+    },
+];
+
+export const dashboardData = [
+    {
+        id: 1,
+        title: "Gross revenue",
+        amount: "$2,480",
+        percentageChange: "+2.15%",
+        changeType: "positive",
+    },
+    {
+        id: 2,
+        title: "Today's revenue",
+        amount: "$411",
+        percentageChange: "+2.15%",
+        changeType: "positive",
+    },
+    {
+        id: 3,
+        title: "Total subscribed users",
+        amount: "200",
+        percentageChange: "+2.15%",
+        changeType: "positive",
+    },
+    {
+        id: 4,
+        title: "Today's subscribed users",
+        amount: "08",
+        percentageChange: "-2.15%",
+        changeType: "negative",
+    },
+];
+
+export const courseDetails = [
+    {
+        id: 1,
+        title: "Pending course review",
+        count: 80,
+    },
+    {
+        id: 2,
+        title: "Pending user feedback review",
+        count: 221,
+    },
+    {
+        id: 3,
+        title: "Pending Q&A review",
+        count: 200,
+    },
+];

@@ -125,6 +125,19 @@ accent-color:#4a00ff;
   border-radius: 10px;
 }
 
+
+.dashboard .ant-tabs-tabpane{
+  padding: 0 !important;
+}
+.dashboard>.ant-tabs-nav>.ant-tabs-nav-wrap>.ant-tabs-nav-list>.ant-tabs-tab-active{
+  background-color: #F4F0FF !important;
+}
+.dashboard>.ant-tabs-nav>.ant-tabs-nav-wrap>.ant-tabs-nav-list>.ant-tabs-tab{
+margin: 0 !important;
+padding: 16px !important;
+/* border-right: 2px solid violet; */
+}
+
 /* react quill css */
 .ql-toolbar{
 border-top-left-radius: 8px;

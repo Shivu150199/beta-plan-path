@@ -40,6 +40,8 @@ import { Wishlist } from "./pages/wishlist";
 import { CourseInfo } from "./components/course";
 import Courseinfo from "./pages/course/Courseinfo";
 import { CartProvider } from "./context api/CartContext";
+import { AddedCourseSingle, Home } from "./pages/dashboard";
+import { DashboardProvider } from "./context api/DashboardContext";
 
 function App() {
     return (
@@ -96,6 +98,23 @@ function App() {
                 <Route path="/not-subscribed" element={<FailSubscribe />} />
                 {/*  */}
                 <Route path="/wishlist" element={<Wishlist />} />
+                {/*  */}
+                <Route
+                    path="/dashboard"
+                    element={
+                        <DashboardProvider>
+                            <Home />
+                        </DashboardProvider>
+                    }
+                />
+                <Route
+                    path="/dashboard/added/:id"
+                    element={
+                        <DashboardProvider>
+                            <AddedCourseSingle />
+                        </DashboardProvider>
+                    }
+                />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
         </BrowserRouter>

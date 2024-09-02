@@ -14,7 +14,7 @@ const CourseDesc = ({ courseDescription }) => {
 
 export default CourseDesc;
 
-const TruncatedParagraph = ({ text, limit }) => {
+export const TruncatedParagraph = ({ text, limit }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleExpansion = () => {
