@@ -21,7 +21,7 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
     const [cartData, setCartData] = useState(courseAddedToCart);
     const [cartNavigation, setCartNavigation] = useState(cartBreadCrumbList);
-    const [selectedCardId, setSelectedCardId] = useState(null);
+    const [selectedCardId, setSelectedCardIds] = useState([]);
     const handleLike = (id) => {
         setCartData((prevData) => {
             return prevData.map((item) =>
@@ -33,7 +33,9 @@ export const CartProvider = ({ children }) => {
         setCartData((prevData) => prevData.filter((item) => item.id !== id));
     };
     const handleSelectCard = (id) => {
-        setSelectedCardId(id);
+        setSelectedCardIds((prevIds) =>
+            prevIds.includes(id) ? prevIds : [...prevIds, id]
+        );
     };
     return (
         <CartContext.Provider
