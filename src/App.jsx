@@ -42,6 +42,8 @@ import Courseinfo from "./pages/course/Courseinfo";
 import { CartProvider } from "./context api/CartContext";
 import { AddedCourseSingle, Home } from "./pages/dashboard";
 import { DashboardProvider } from "./context api/DashboardContext";
+import { PathProvider } from "./context api/PathContext";
+import { MyPath } from "./pages/mypath";
 
 function App() {
     return (
@@ -91,7 +93,7 @@ function App() {
                         </CartProvider>
                     }
                 />
-                <Route path="/my-path" element={<Path />} />
+                {/* <Route path="/my-path" element={<Path />} /> */}
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/payment" element={<Payment />} />
                 <Route path="/subscribed" element={<SuccessfulSubscribe />} />
@@ -113,6 +115,15 @@ function App() {
                         <DashboardProvider>
                             <AddedCourseSingle />
                         </DashboardProvider>
+                    }
+                />
+
+                <Route
+                    path="/my-path"
+                    element={
+                        <PathProvider>
+                            <Path />
+                        </PathProvider>
                     }
                 />
                 <Route path="*" element={<PageNotFound />} />
