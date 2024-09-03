@@ -382,3 +382,187 @@ export const courseDetails = [
         count: 200,
     },
 ];
+
+
+export const planpathData=[
+    {
+        id:1,
+        type:'English',
+        ninth:{
+            subject:"English one for credit recovery",
+            crScore:1.00
+        },
+        tenth:{
+            subject:'English 2',
+            crScore:1.00
+        },
+        eleventh:{
+            subject:'English 2 for credit recoovery',
+            crScore:1.00
+        },
+        twelth:{
+            subject:'Engllish 4 for credit recovery',
+            crScore:1.00
+        },
+        total:4.00
+    },   {
+        id:1,
+        type:'English',
+        ninth:{
+            subject:"English one for credit recovery",
+            crScore:1.00
+        },
+        tenth:{
+            subject:'English 2',
+            crScore:1.00
+        },
+        eleventh:{
+            subject:'English 2 for credit recoovery',
+            crScore:1.00
+        },
+        twelth:{
+            subject:'Engllish 4 for credit recovery',
+            crScore:1.00
+        },
+        total:4.00
+    },   {
+        id:1,
+        type:'English',
+        ninth:{
+            subject:"English one for credit recovery",
+            crScore:1.00
+        },
+        tenth:{
+            subject:'English 2',
+            crScore:1.00
+        },
+        eleventh:{
+            subject:'English 2 for credit recoovery',
+            crScore:1.00
+        },
+        twelth:{
+            subject:'Engllish 4 for credit recovery',
+            crScore:1.00
+        },
+        total:4.00
+    },   {
+        id:1,
+        type:'English',
+        ninth:{
+            subject:"English one for credit recovery",
+            crScore:1.00
+        },
+        tenth:{
+            subject:'English 2',
+            crScore:1.00
+        },
+        eleventh:{
+            subject:'English 2 for credit recoovery',
+            crScore:1.00
+        },
+        twelth:{
+            subject:'Engllish 4 for credit recovery',
+            crScore:1.00
+        },
+        total:4.00
+    },
+]
+
+export const treeData = {
+    ninth: {
+        title: '9th grade',
+        data: [
+            {
+                id: '1',
+                sub: 'English 1 for Credit Recovery , [FL]',
+                code: 'CS102',
+                credit: 4
+            },
+            {
+                id: '2',
+                sub: 'Algebra 1',
+                code: 'CS103',
+                credit: 4
+            },
+            {
+                id: '3',
+                sub: 'Algebra 1',
+                code: 'CS104',
+                credit: 4
+            },
+        ],
+        total: 40
+    },
+    tenth: {
+        title: '10th grade',
+        data: [
+            {
+                id: '4',
+                sub: 'English 1 for Credit Recovery , [FL]',
+                code: 'CS105',
+                credit: 4
+            },
+            {
+                id: '5',
+                sub: 'Algebra 1',
+                code: 'CS106',
+                credit: 4
+            },
+            {
+                id: '6',
+                sub: 'Algebra 1',
+                code: 'CS107',
+                credit: 4
+            },
+        ],
+        total: 40
+    },
+    eleventh: {
+        title: 'Eleventh grade',
+        data: [
+            {
+                id: '7',
+                sub: 'English 1 for Credit Recovery , [FL]',
+                code: 'CS108',
+                credit: 4
+            },
+            {
+                id: '8',
+                sub: 'Algebra 1',
+                code: 'CS109',
+                credit: 4
+            },
+            {
+                id: '9',
+                sub: 'Algebra 1',
+                code: 'CS110',
+                credit: 4
+            },
+        ],
+        total: 40
+    },
+    twelth: {
+        title: '12th grade',
+        data: [
+            {
+                id: '10',
+                sub: 'English 1 for Credit Recovery , [FL]',
+                code: 'CS111',
+                credit: 4
+            },
+            {
+                id: '11',
+                sub: 'Algebra 1',
+                code: 'CS112',
+                credit: 4
+            },
+            {
+                id: '12',
+                sub: 'Algebra 1',
+                code: 'CS113',
+                credit: 4
+            },
+        ],
+        total: 40
+    },
+}
