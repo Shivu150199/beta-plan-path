@@ -160,3 +160,29 @@ height:18rem;
   .course-select{
     background-image:url('./assets/navbar/arrowdown.svg');background-repeat:no-repeat;background-position:calc(100% - 10px) center;background-size: 12px;
   }
+
+
+  .ninth::before,.eleventh:before{
+    content:'';
+    position:absolute;
+    width:144px;
+    height: 100px;
+  
+    border-bottom: 2px solid #797a7a;
+
+    left:380px;
+    border-bottom-right-radius: 40px;
+
+  }
+  .tenth::before,.twelth:before{
+    content:'';
+    position:absolute;
+    width:144px;
+    height: 100px;
+  
+    border-bottom: 2px solid #797a7a;
+    
+    right:380px;
+    border-bottom-left-radius: 40px;
+
+  }
