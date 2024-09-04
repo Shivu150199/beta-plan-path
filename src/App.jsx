@@ -44,6 +44,8 @@ import { AddedCourseSingle, Home } from "./pages/dashboard";
 import { DashboardProvider } from "./context api/DashboardContext";
 import { PathProvider } from "./context api/PathContext";
 import { MyPath } from "./pages/mypath";
+import { AddSchoolProvider } from "./context api/AddSchoolContext";
+import { AddToSchool } from "./pages/addSchool";
 
 function App() {
     return (
@@ -126,6 +128,11 @@ function App() {
                         </PathProvider>
                     }
                 />
+
+<Route path='/add-to-school' element={<AddSchoolProvider>
+    <AddToSchool/>
+</AddSchoolProvider>}/>
+
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
         </BrowserRouter>

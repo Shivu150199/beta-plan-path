@@ -151,6 +151,10 @@ border-top-right-radius:8px;
 height:18rem;
 }
    
+.additionalQuill .quill{
+  width: 100%;
+  padding: 1rem;
+}
 
 
 

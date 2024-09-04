@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { search } from "../../assets/course";
 import { nanoid } from "nanoid";
-import { CourseContext } from "../../context api/CourseContext";
 
-const FilterList = ({ title, filtersList }) => {
+
+const ListFilter = ({ title, filtersList,handleFilterChnange }) => {
     const [showAll, setShowAll] = useState(false);
     const itemToshow = showAll ? filtersList : filtersList.slice(0, 4);
     const handleToggleShow = () => {
@@ -35,7 +35,7 @@ const FilterList = ({ title, filtersList }) => {
                                     type="checkbox"
                                     className="w-[20px] h-[20px] border-[#D0D0D0] border-[1px] "
                                     id={name}
-                                    // onChange={handleCourseFilter}
+                                    onChange={handleFilterChnange}
                                 />
                                 <span className="font-[400] text-[14px]">
                                     {name} <span>({total})</span>
@@ -59,4 +59,4 @@ const FilterList = ({ title, filtersList }) => {
     );
 };
 
-export default FilterList;
+export default ListFilter;

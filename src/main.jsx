@@ -5,10 +5,10 @@ import './index.css'
 import { CourseProvider } from './context api/CourseContext.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+
     <CourseProvider>
 
     <App />
     </CourseProvider>
-  </StrictMode>,
+ 
 )

@@ -8,7 +8,7 @@ const Select = ({label,placeholder,list}) => {
 <label htmlFor="" className='text-base font-medium text-dark_gray'>{label}</label>
 
    <select  className='course-select p-4 select-bordered w-full rounded-[4px] outline-none placeholder:text-placeholder border-[1px] focus:border-primary'>
-  <option disabled  className='text-placeholder'>{placeholder}</option>
+  <option disabled  selected className='text-placeholder'>{placeholder}</option>
   {list.map((item)=>{
     let id=nanoid()
     return   <option key={id}>{item}</option>

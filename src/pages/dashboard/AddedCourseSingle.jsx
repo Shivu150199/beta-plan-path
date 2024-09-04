@@ -75,9 +75,7 @@ const AddedCourseSingle = () => {
                             <h2 className="font-[700] md:text-[28px] text-[18px] text-[#31225C]">
                                 {filteredData[0].title}
                             </h2>
-                            <div className="p-1 border-[1px] w-8 h-8  rounded-md flex items-center justify-center">
-                                <img src={approve} alt="" />
-                            </div>
+                       
                         </div>
 
                         <div className="flex gap-2 items-center">

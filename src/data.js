@@ -566,3 +566,39 @@ export const treeData = {
         total: 40
     },
 }
+
+
+export const finalcourses = [
+    {
+      title: "General physics",
+      availableCredits: 4.00,
+      categoryType: "Core",
+    
+    },
+    {
+      title: "General physics",
+      availableCredits: 4.00,
+      categoryType: "Core",
+    
+    },
+    {
+      title: "General physics",
+      availableCredits: 4.00,
+      categoryType: "Core",
+  
+    },
+    {
+      title: "General physics",
+      availableCredits: 4.00,
+      categoryType: "Core",
+    
+    },
+    {
+      title: "General physics",
+      availableCredits: 4.00,
+      categoryType: "Core",
+    }
+  ];
+  
+
+  
