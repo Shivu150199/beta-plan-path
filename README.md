@@ -120,21 +120,38 @@ In the `tailwind.config.js` file, you can extend the default color palette to in
 Here’s an example of how to extend the color palette in your Tailwind CSS configuration:
 
 ```javascript
-// tailwind.config.js
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
-        primary: '#603AC8',       // Custom primary color
-        dark_gray: '#494747',     // Custom dark gray color
-        light_gray: '#8A8A8A',    // Custom light gray color
-        dark_violet: '#31225C'    // Custom dark violet color
+        primary: '#603AC8',
+        dark_gray:'#494747',
+        light_gray:'#8A8A8A',
+        dark_violet:'#31225C',
+        light_violet:'#ECE4FF',
+        placeholder:'#8A8A8A', // Example of a custom primary color
+        success:'#2FAF47',
+        failure:'#EF0000',
+        creambg:'#f5f5f5',
+        disable_btn:'#BDBDBD',
+        paraColor:'#525252'
+      },
+      screens: {
+        'xs': {'max': '300px'},  // Custom screen size for up to 300px
+        'xm': {'min': '500px'},  // Custom screen size for up to 300px
       },
     },
   },
-  // Other configurations...
-};
-
+  plugins: [require('daisyui'),],
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
+}
  ```
 -   **DaisyUI:** A component library built on top of Tailwind CSS.
   ## DaisyUI Configuration
@@ -156,20 +173,91 @@ module.exports = {
 ```
 -   **Ant Design:** A design system for React.
 -   **React Router Dom:** A library for handling routing in React applications.
-   ```js
-  <Routes>
-<Route path="/" element={<Course/>}/>
-<Route path="/course" element={<AboutCourse/>}/>
-<Route path="/login" element={<Signin/>}/>
-<Route path="/register" element={<Signup/>}/>
-<Route path="/signup-organisation" element={<SignupOrg/>}/>
-<Route path="/signin-organisation" element={<SigninOrg/>}/>
-<Route path="/forgot-password" element={<ForgotPassword/>}/>
-<Route path="/reset-password" element={<ResetPassword/>}/>
-<Route path="/success" element={<EmailSuccess/>}/>
-<Route path="/cart" element={<Cart/>}/>
-<Route path="*" element={<><h1>page not found</h1></>}/>
-  </Routes>
+   ``` js
+     <Routes>
+                <Route path="/" element={<Landing />} />
+                <Route path="/course" element={<Course />} />
+                <Route path="/course/:id" element={<Courseinfo />} />
+                {/* <Route path="/course/:id" element={<AboutCourse/>}/> */}
+                <Route path="/edit-course/:id" element={<EditSingleCourse />} />
+                <Route path="/edit-course" element={<EditCourse />} />
+                <Route path="/create-course" element={<CreateCourse />} />
+                <Route path="/login" element={<Signin />} />
+                <Route path="/register" element={<Signup />} />
+                <Route path="/signup-organisation" element={<SignupOrg />} />
+                <Route path="/signin-organisation" element={<SigninOrg />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/reset-password" element={<ResetPassword />} />
+                <Route path="/success" element={<EmailSuccess />} />
+                {/*  */}
+                <Route path="/contactus" element={<Contactus />} />
+                <Route path="/aboutus" element={<Aboutus />} />
+                <Route path="/policy" element={<Policy />} />
+                <Route path="/terms" element={<Terms />} />
+                {/*  */}
+
+                <Route path="/myprofile" element={<MyProfile />} />
+                {/*  */}
+                <Route
+                    path="/cart"
+                    element={
+                        <CartProvider>
+                            <Cart />
+                        </CartProvider>
+                    }
+                />
+                {/* <Route path="/my-path" element={<Path />} /> */}
+                <Route path="/pricing" element={<Pricing />} />
+                <Route path="/payment" element={<Payment />} />
+                <Route path="/subscribed" element={<SuccessfulSubscribe />} />
+                <Route path="/not-subscribed" element={<FailSubscribe />} />
+                {/*  */}
+                <Route path="/wishlist" element={<Wishlist />} />
+                {/*  */}
+                <Route
+                    path="/dashboard"
+                    element={
+                        <DashboardProvider>
+                            <Home />
+                        </DashboardProvider>
+                    }
+                />
+                <Route
+                    path="/dashboard/added/:id"
+                    element={
+                        <DashboardProvider>
+                            <AddedCourseSingle />
+                        </DashboardProvider>
+                    }
+                />
+
+                <Route
+                    path="/my-path"
+                    element={
+                        <PathProvider>
+                            <Path />
+                        </PathProvider>
+                    }
+                />
+
+                <Route
+                    path="/add-to-school"
+                    element={
+                        <AddSchoolProvider>
+                            <AddToSchool />
+                        </AddSchoolProvider>
+                    }
+                />
+                <Route path="/email-verification" element={<Emailer />} />
+                <Route path="/followup" element={<FollowupMail />} />
+
+                <Route path='/compare' element={<CourseProvider>
+                    <CourseCompare/>
+                </CourseProvider>}/>
+
+                <Route path="*" element={<PageNotFound />} />
+            </Routes>
+
  ```
  **Toastify:** A notification library for React.
     in app.jsx
@@ -187,14 +275,18 @@ theme="light"
   ```
 -   **Normalize.css:** A CSS library that helps normalize cross-browser styling differences.
 -   
-```js "dependencies": {
+```js   "dependencies": {
     "antd": "^5.20.2",
+    "draft-js": "^0.11.7",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
     "nanoid": "^5.0.7",
     "normalize.css": "^8.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
     "react-lazy-load-image-component": "^1.6.2",
+    "react-quill": "^2.0.0",
     "react-router-dom": "^6.26.1",
     "react-toastify": "^10.0.5"
   },
