@@ -199,7 +199,7 @@ const EditSingleCourse = () => {
             </div>
 
             <Drawer closable={false} onClose={open} open={open} width={`100%`}>
-                <CreateCourse />
+                <CreateCourse open={open} setOpen={setOpen} />
             </Drawer>
         </section>
     );

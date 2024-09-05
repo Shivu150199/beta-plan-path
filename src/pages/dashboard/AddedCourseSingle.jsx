@@ -19,9 +19,10 @@ import {
 import AddedCourseDescription from "../../components/dashboard/AddedCourseDescription";
 import AddedCourseQnA from "../../components/dashboard/AddedCourseQnA";
 import { approve } from "../../assets/dashboard";
+import { CreateCourse } from "../course";
 
 const AddedCourseSingle = () => {
-    const { addedCourse, review, queData } = useContext(DashboardContext);
+    const { addedCourse, review, queData,open,setOpen } = useContext(DashboardContext);
 
     const onChange = (key) => {};
 
@@ -140,6 +141,14 @@ const AddedCourseSingle = () => {
                                 <button className="outline-btn border-[1px] border-primary">
                                     Mark as approved
                                 </button>
+                                <Drawer
+                            closable={false}
+                            onClose={open}
+                            open={open}
+                            width={`100%`}
+                        >
+                            <CreateCourse open={open} setOpen={setOpen} />
+                        </Drawer>
                             </div>
                         </div>
                     </div>

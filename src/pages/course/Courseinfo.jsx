@@ -190,7 +190,7 @@ const Courseinfo = () => {
             </div>
 
             <Drawer closable={false} onClose={open} open={open} width={`100%`}>
-                <CreateCourse />
+                <CreateCourse open={open} setOpen={setOpen} />
             </Drawer>
 
             <div className="sticky bottom-0 flex items-center justify-end gap-4 p-2 border-t-[1px]">

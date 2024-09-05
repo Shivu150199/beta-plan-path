@@ -23,8 +23,7 @@ const VerticalCourseCard = ({item,handleCourse}) => {
     const { isVertical, setIsVertical } = useContext(AddSchoolContext);
     return (
         <div className=" flex gap-4 h-[20rem] border-[1px] p-1 rounded-md">
-            <Link
-                to={`/course/${id}`}
+            <div
                 role="div"
                 className="flex-[.30] rounded-md"
             >
@@ -33,10 +32,10 @@ const VerticalCourseCard = ({item,handleCourse}) => {
                     alt=""
                     className="h-full object-cover rounded-md"
                 />
-            </Link>
+            </div>
 
             <div className="px-2 flex flex-col w-full flex-[.70] gap-2">
-                <Link to={`/course/${id}`} className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2">
                     <h2 className="font-[700] text-[#31225C] text-[18px]">
                         {title}
                     </h2>
@@ -102,7 +101,7 @@ const VerticalCourseCard = ({item,handleCourse}) => {
                     >
                         {desc.substring(0, 100)}...
                     </p>
-                </Link>
+                </div>
              <CardButton handleCourse={handleCourse} id={id}/>
             </div>
         </div>

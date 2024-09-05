@@ -4,6 +4,7 @@ import { arrowpath, smallarrow, smArraow } from "../../assets/path";
 import { PathContext } from "../../context api/PathContext";
 import { nanoid } from "nanoid";
 import FooterButton from "./FooterButton";
+import { Link } from "react-router-dom";
 
 const TreeView = () => {
     const { tree, handleDeleteItem } = useContext(PathContext);
@@ -18,7 +19,7 @@ const TreeView = () => {
                 <div className="flex justify-between items-center">
                     <div className="flex gap-1 items-center">
                         <div
-                            className={`w-3 h-3 bg-[${color}] rounded-sm`}
+                            className={`w-3 h-3 ${color} rounded-sm`}
                         ></div>
                         <h2 className="text-base font-medium text-paraColor">
                             {item.sub}
@@ -44,9 +45,9 @@ const TreeView = () => {
         >
             <div className="flex items-center justify-between">
                 <h3 className="text-[24px] font-bold">{path.title}</h3>
-                <button className="text-primary font-medium text-sm">
+                <Link to='/cart' className="text-primary font-medium text-sm">
                     Edit
-                </button>
+                </Link >
             </div>
             {renderPathItems(path.data, grade, color)}
             <div className={`border-[1px] p-2 rounded-md ${bgColor}`}>
@@ -69,14 +70,14 @@ const TreeView = () => {
                         {renderPathArticle(
                             ninth,
                             "ninth",
-                            "#F89706",
+                            "bg-[#F89706]",
                             "ninth border-l-[4px] border-l-[#F89706] mb-40",
                             "bg-[#FFF6E9]"
                         )}
                         {renderPathArticle(
                             eleventh,
                             "eleventh",
-                            "#17A8ED",
+                            "bg-[#17A8ED]",
                             "ninth border-l-[4px] border-l-[#17A8ED]",
                             "bg-[#EBF8FF]"
                         )}
@@ -125,14 +126,14 @@ const TreeView = () => {
                         {renderPathArticle(
                             tenth,
                             "tenth",
-                            "#F95515",
+                            "bg-[#F95515]",
                             "tenth border-r-[4px] border-r-[#F95515] my-40",
                             "bg-[#FFEEE8]"
                         )}
                         {renderPathArticle(
                             twelth,
                             "twelth",
-                            "#2FAF47",
+                            "bg-[#2FAF47]",
                             "tenth border-r-[4px] border-r-[#2FAF47]",
                             "bg-[#E3F9E7]"
                         )}
@@ -145,28 +146,28 @@ const TreeView = () => {
                 {renderPathArticle(
                     ninth,
                     "ninth",
-                    "#F89706",
+                    "bg-[#F89706]",
                     " border-l-[4px] border-l-[#F89706] w-full md:w-[70%] my-4",
                     "bg-[#FFF6E9]"
                 )}
                 {renderPathArticle(
                     eleventh,
                     "eleventh",
-                    "#17A8ED",
+                    "bg-[#17A8ED]",
                     " border-l-[4px] border-l-[#17A8ED] w-full md:w-[70%] my-4",
                     "bg-[#EBF8FF]"
                 )}
                 {renderPathArticle(
                     tenth,
                     "tenth",
-                    "#F95515",
+                    "bg-[#F95515]",
                     " border-r-[4px] border-r-[#F95515] w-full md:w-[70%] my-4",
                     "bg-[#FFEEE8]"
                 )}
                 {renderPathArticle(
                     twelth,
                     "twelth",
-                    "#2FAF47",
+                    "bg-[#2FAF47]",
                     " border-r-[4px] border-r-[#2FAF47] w-full md:w-[70%] my-4",
                     "bg-[#E3F9E7]"
                 )}

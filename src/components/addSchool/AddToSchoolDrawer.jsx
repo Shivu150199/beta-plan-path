@@ -37,7 +37,7 @@ const handleModal=()=>{
     <div className="flex flex-col border-b-[1px] sticky top-0 bg-white mb-4">
         <div className="flex items-center justify-between p-4">
             <h2 className="text-2xl font-bold text-dark_violet ">
-                Create course
+                Add to School
             </h2>
             <button
                 onClick={() => {

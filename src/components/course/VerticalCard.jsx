@@ -15,6 +15,7 @@ const VerticalCard = ({
     rating,
     totalRating,
     id,
+    handleCompare
 }) => {
     const { isVertical, setIsVertical } = useContext(CourseContext);
     return (
@@ -111,9 +112,10 @@ const VerticalCard = ({
                     >
                         <label className="label cursor-pointer gap-3">
                             <input
-                                defaultChecked
+                               
                                 type="checkbox"
                                 className="w-[20px] h-[20px] border-[#D0D0D0] border-[1px] "
+                                onChange={()=>handleCompare(id)}
                             />
                             <span className="text-[#525252] font-[500] text-[14px]">
                                 Compare

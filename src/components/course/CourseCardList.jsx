@@ -14,6 +14,7 @@ const CourseCardList = () => {
         isVertical,
         setIsVertical,
         formData,
+        handleCompare
     } = useContext(CourseContext);
 
     const showFilter = () => {
@@ -26,7 +27,7 @@ const CourseCardList = () => {
     const onChange = (key) => {};
 
     return (
-        <div className="main p-2 pt-0 md:p-0 flex-auto overflow-auto no-scrollbar h-full">
+        <div className="main p-2 pt-0 md:p-0 flex-auto overflow-auto no-scrollbar h-full relative">
             <div className="items-center justify-between w-[100%] flex border-b-[1px] md:px-4 px-2 py-2 sticky top-0 bg-white z-10">
                 <p className="text-[13px] text-[#525252] font-[700]">
                     Showing 1-100 of 2332 results
@@ -106,6 +107,7 @@ const CourseCardList = () => {
                                 desc={item.desc}
                                 rating={item.rating}
                                 id={item.id}
+                                handleCompare={handleCompare}
                             />
                         );
                     })}
@@ -124,11 +126,14 @@ const CourseCardList = () => {
                                 desc={item.desc}
                                 rating={item.rating}
                                 id={item.id}
+                                handleCompare={handleCompare}
                             />
                         );
                     })}
                 </div>
             )}
+
+
         </div>
     );
 };

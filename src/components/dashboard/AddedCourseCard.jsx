@@ -3,7 +3,7 @@ import React from "react";
 import { emptystar, fillstar } from "../../assets/course";
 import { Link } from "react-router-dom";
 
-const AddedCourseCard = ({ item, goto }) => {
+const AddedCourseCard = ({ item, goto,setOpen }) => {
     return (
         <article
             key={item.id}
@@ -83,7 +83,7 @@ const AddedCourseCard = ({ item, goto }) => {
                 </Link>
 
                 <div className="flex items-center gap-4 p-2 justify-end md:justify-start">
-                    <button className="outline-btn border-[1px] border-primary">
+                    <button onClick={()=>setOpen(true)} className="outline-btn border-[1px] border-primary">
                         <span>Edit course</span>
                     </button>
                     <button className="outline-btn border-[1px] border-primary">

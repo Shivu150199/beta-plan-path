@@ -10,9 +10,11 @@ import { BreadCrumb } from "../../components/utils";
 import { CourseContext } from "../../context api/CourseContext";
 import { CourseCardList, CourseFilter, Filter } from "../../components/course";
 import { filterIcon } from "../../assets/course";
+import { Link } from "react-router-dom";
+import alert from '../../assets/alert.svg'
 
 const Course = () => {
-    const { showFilter, onCloseFilter, openFilter, setIsVertical, formData } =
+    const { showFilter, onCloseFilter, openFilter, setIsVertical, formData,compareId } =
         useContext(CourseContext);
 
     const { breadCrumbList } = useContext(CourseContext);
@@ -34,6 +36,7 @@ const Course = () => {
     const onChange = (key) => {
         //  const filterData=courseData.filter((item)=>)
     };
+
 
     return (
         <section className="bg-creambg px-2 flex flex-col w-[100%] h-[calc(100vh-64px)] relative">
@@ -68,10 +71,29 @@ const Course = () => {
                 </button>
             </div>
 
-            <div className="flex md:border-[1px] rounded-lg bg-white md:mx-4 md:h-[calc(100vh-160px)] h-[calc(100vh-212px)]">
+            <div className="flex md:border-[1px] rounded-lg bg-white md:mx-4 md:h-[calc(100vh-160px)] h-[calc(100vh-212px)] ">
                 <CourseFilter />
                 <CourseCardList />
+     
             </div>
+
+            {compareId.length > 0 && (
+                <Link to='/compare'
+                    // onClick={() => handleOpen()}
+                    className="bg-primary rounded-md text-white font-medium text-sm fixed right-10 bottom-14 flex items-center gap-1 px-4 py-2"
+                >
+                    <span>Compare</span>
+                    <p className="bg-white rounded-sm text-black w-4 h-4 flex items-center justify-center ">
+                        {compareId.length}
+                    </p>
+                </Link>
+            )}
+{compareId.length>2&&<div role="alert" className="alert alert-error bg-[#FFD6D6] opacity-80 rounded-md border-[1px] border-red-600 fixed left-1/2 transform -translate-x-1/2 bottom-auto top-20 md:top-auto md:bottom-20 md:w-[50%] flex items-center gap-2">
+<img src={alert} alt="alert icon" />
+  <span>You can select max 4 courses to compare</span>
+</div>}
+
+
 
             <Pagination />
             <Drawer

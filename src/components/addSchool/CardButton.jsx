@@ -10,9 +10,9 @@ const CardButton = ({handleCourse,id}) => {
 >
    
     <button onClick={()=>handleCourse(id)}
-        className={`${added?'border-primary text-primary ':'border-paraColor bg-[#EDECEC] text-paraColor '} border-[1px] px-4 py-2 rounded-md`} 
+        className={`${!added?'border-primary text-primary ':'border-paraColor bg-[#EDECEC] text-paraColor '} font-medium text-sm  border-[1px] px-4 py-2 rounded-md`} 
     >
-        {added?'Added to school':'Add to school'}
+        {!added?'Add to school':'Added to school'}
         
     </button>
 </div>

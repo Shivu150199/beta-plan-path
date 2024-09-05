@@ -21,9 +21,22 @@ const CartCard = ({ item }) => {
             } focus:border-primary`}
             aria-selected={isSelected}
         >
-            <h2 className="text-base font-medium text-dark_violet">
-                {item.subject}
-            </h2>
+            <div className="flex items-center justify-between">
+                <h2 className="text-base font-medium text-dark_violet">
+                    {item.subject}
+                </h2>
+                {item.planGenerated && (
+                    <select
+                        name=""
+                        id=""
+                        className="text-primary border-[1px] border-primary text-sm font-bold item-select w-28 px-[4px] py-[2px] rounded-lg ouline-none focus:ouline-none focus:border-primary"
+                    >
+                        <option selected>In progress</option>
+                        <option value="">Completed</option>
+                    </select>
+                )}
+            </div>
+
             <ul className="flex gap-2">
                 <li className="text-sm font-normal text-paraColor">
                     Available Credit: {item.about.credit}

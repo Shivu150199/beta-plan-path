@@ -3,6 +3,7 @@ import { ShareModal, TableView, TreeView } from "../../components/path";
 import { BreadCrumb } from "../../components/utils";
 import { PathContext } from "../../context api/PathContext";
 import { pathlogo, pdf, share, table } from "../../assets/path";
+import { Link } from "react-router-dom";
 
 const Path = () => {
     const { myPathBreadCrumb } = useContext(PathContext);
@@ -54,9 +55,9 @@ const Path = () => {
                             <img src={pdf} alt="Download" />
                             <span>Download</span>
                         </button>
-                        <button className="primary-btn border-[1px] border-primary md:flex hidden">
+                        <Link to='/cart' className="primary-btn border-[1px] border-primary md:flex hidden hover:bg-violet-500">
                             Edit
-                        </button>
+                        </Link>
                     </div>
                 </div>
 

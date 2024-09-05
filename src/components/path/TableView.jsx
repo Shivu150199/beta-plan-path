@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { pencil } from '../../assets/path'
 import { PathContext } from '../../context api/PathContext'
+import { Link } from 'react-router-dom'
 
 const TableView = () => {
    const {tableData}= useContext(PathContext)
@@ -54,9 +55,9 @@ const TableView = () => {
             <span className="text-dark_violet text-sm">
                {item.total} (Cr)
             </span>
-            <button className="outline-btn border-primary border-[1px]">
+            <Link to='/cart' className="outline-btn border-primary border-[1px]">
                 <img src={pencil} alt="" />
-            </button>
+            </Link>
         </div>
     </div>
     })

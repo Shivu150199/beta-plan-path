@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { DashboardContext } from "../../context api/DashboardContext";
 import AddedCourseCard from "./AddedCourseCard";
 
-const RecentlyAddedCourse = () => {
+const RecentlyAddedCourse = ({setOpen}) => {
     const { addedCourse } = useContext(DashboardContext);
     return (
         <section className="w-full p-4 bg-creambg flex flex-col gap-4 overflow-auto h-[calc(100vh-64px)] no-scrollbar">
@@ -17,6 +17,7 @@ const RecentlyAddedCourse = () => {
                                 key={item.id}
                                 item={item}
                                 goto={`/dashboard/added/${item.id}`}
+                                setOpen={setOpen}
                             />
                         );
                     })}

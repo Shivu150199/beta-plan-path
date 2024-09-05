@@ -1,4 +1,4 @@
-import { Tabs } from "antd";
+import { Drawer, Tabs } from "antd";
 import React, { useContext } from "react";
 
 import {
@@ -10,9 +10,10 @@ import { book, dashboard, feedback, qna } from "../../assets/dashboard";
 
 import { DashboardContext } from "../../context api/DashboardContext";
 import AddedCourseQnA from "../../components/dashboard/AddedCourseQnA";
+import { CreateCourse } from "../course";
 
 const Home = () => {
-    const { review, queData } = useContext(DashboardContext);
+    const { review, queData,open,setOpen } = useContext(DashboardContext);
     const item = [
         {
             label: (
@@ -30,7 +31,7 @@ const Home = () => {
                 </div>
             ),
             key: 2,
-            children: <RecentlyAddedCourse />,
+            children: <RecentlyAddedCourse setOpen={setOpen} />,
         },
         {
             label: (
@@ -64,6 +65,15 @@ const Home = () => {
                 tabPosition="left"
                 items={item}
             />
+
+<Drawer
+                            closable={false}
+                            onClose={open}
+                            open={open}
+                            width={`100%`}
+                        >
+                            <CreateCourse open={open} setOpen={setOpen} />
+                        </Drawer>
         </section>
     );
 };

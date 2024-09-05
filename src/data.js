@@ -274,6 +274,7 @@ export const courseAddedToCart = [
             type: "Core",
         },
         liked: false,
+        planGenerated:true,
     },
     {
         id: 2,
@@ -283,6 +284,7 @@ export const courseAddedToCart = [
             type: "Core",
         },
         liked: false,
+        planGenerated:true,
     },
     {
         id: 3,
@@ -292,6 +294,7 @@ export const courseAddedToCart = [
             type: "Core",
         },
         liked: false,
+        planGenerated:false,
     },
     {
         id: 4,
@@ -301,6 +304,7 @@ export const courseAddedToCart = [
             type: "Core",
         },
         liked: false,
+        planGenerated:false,
     },
 ];
 
@@ -570,30 +574,35 @@ export const treeData = {
 
 export const finalcourses = [
     {
+        id:1,
       title: "General physics",
       availableCredits: 4.00,
       categoryType: "Core",
     
     },
     {
+        id:2,
       title: "General physics",
       availableCredits: 4.00,
       categoryType: "Core",
     
     },
     {
+        id:3,
       title: "General physics",
       availableCredits: 4.00,
       categoryType: "Core",
   
     },
     {
+        id:4,
       title: "General physics",
       availableCredits: 4.00,
       categoryType: "Core",
     
     },
     {
+        id:5,
       title: "General physics",
       availableCredits: 4.00,
       categoryType: "Core",

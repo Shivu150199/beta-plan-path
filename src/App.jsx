@@ -35,6 +35,7 @@ import {
     EditCourse,
     CreateCourse,
     EditSingleCourse,
+    CourseCompare,
 } from "./pages/course";
 import { Wishlist } from "./pages/wishlist";
 import { CourseInfo } from "./components/course";
@@ -46,6 +47,9 @@ import { PathProvider } from "./context api/PathContext";
 import { MyPath } from "./pages/mypath";
 import { AddSchoolProvider } from "./context api/AddSchoolContext";
 import { AddToSchool } from "./pages/addSchool";
+import Emailer from "./pages/emailer/Emailer";
+import FollowupMail from "./pages/emailer/FollowupMail";
+import { CourseProvider } from "./context api/CourseContext";
 
 function App() {
     return (
@@ -129,9 +133,20 @@ function App() {
                     }
                 />
 
-<Route path='/add-to-school' element={<AddSchoolProvider>
-    <AddToSchool/>
-</AddSchoolProvider>}/>
+                <Route
+                    path="/add-to-school"
+                    element={
+                        <AddSchoolProvider>
+                            <AddToSchool />
+                        </AddSchoolProvider>
+                    }
+                />
+                <Route path="/email-verification" element={<Emailer />} />
+                <Route path="/followup" element={<FollowupMail />} />
+
+                <Route path='/compare' element={<CourseProvider>
+                    <CourseCompare/>
+                </CourseProvider>}/>
 
                 <Route path="*" element={<PageNotFound />} />
             </Routes>

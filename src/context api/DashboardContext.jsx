@@ -15,7 +15,7 @@ export const DashboardProvider = ({ children }) => {
     const [queData, setQueData] = useState(qnaData);
     const [userDetailData, setUserDetailData] = useState(dashboardData);
     const [dashCourseDetail, setDashCourseDetail] = useState(courseDetails);
-
+const [open,setOpen]=useState(false)
     return (
         <DashboardContext.Provider
             value={{
@@ -24,6 +24,8 @@ export const DashboardProvider = ({ children }) => {
                 queData,
                 userDetailData,
                 dashCourseDetail,
+                open,
+                setOpen
             }}
         >
             {children}

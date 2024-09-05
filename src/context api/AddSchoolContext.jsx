@@ -83,9 +83,10 @@ const deleteCourse = (id) => {
     );
 };
 
+const [additionalInfo,setAdditionalInfo]=useState('')
+console.log(additionalInfo)
 
 
-console.log(addedCourse)
     return (
         <AddSchoolContext.Provider
             value={{
@@ -104,7 +105,7 @@ console.log(addedCourse)
                 addedCourse,
                 open,handleOpen,
                 finalizeCourse,
-                deleteCourse
+                deleteCourse,setAdditionalInfo,additionalInfo
             }}
         >
             {children}

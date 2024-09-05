@@ -54,7 +54,7 @@ const EditCourse = () => {
                             open={open}
                             width={`100%`}
                         >
-                            <CreateCourse />
+                            <CreateCourse open={open} setOpen={setOpen} />
                         </Drawer>
 
                         {/*  */}

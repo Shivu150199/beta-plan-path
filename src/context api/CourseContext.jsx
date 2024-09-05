@@ -1,12 +1,13 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { courseData, filterObj, reviewData } from "../data";
 
 export const CourseContext = createContext();
 
 export const CourseProvider = ({ children }) => {
     const [open, setOpen] = useState(false);
-    const [coursesData, setCoursesData] = useState(courseData);
     const [openFilter, setOpenFilter] = useState(false);
+    const [coursesData, setCoursesData] = useState(courseData);
+    const [compareData, setCompareData] = useState(courseData);
     const [filterData, setFilterData] = useState(filterObj);
     const [review, setReview] = useState(reviewData);
     const showFilter = () => {
@@ -24,6 +25,20 @@ export const CourseProvider = ({ children }) => {
             title: "Course",
             path: "/course",
         },
+    ];
+    const compareCrumbList = [
+        {
+            title: "Home",
+            path: "/",
+        },
+        {
+            title: "Course",
+            path: "/course",
+        },
+        {
+            title:'Compare',
+            path:'/compare'
+        }
     ];
     const courseTabs = [
         {
@@ -62,7 +77,23 @@ export const CourseProvider = ({ children }) => {
     };
 
     const [rating, setRating] = useState(0); // State to hold the current rating
+const[compareId,setCompareId]=useState([])
+const handleCompare = (id) => {
+    setCompareId((prevData) => {
+        if (prevData.includes(id)) {
+            return prevData.filter((courseId) => courseId !== id);
+        } else {
+            return [...prevData, id];
+        }
+    });
+};
 
+const deleteCompare=(id)=>{
+setCompareData((prev)=>prev.filter((item)=>item.id !== id))
+}
+
+
+console.log(compareId)
     return (
         <CourseContext.Provider
             value={{
@@ -84,6 +115,11 @@ export const CourseProvider = ({ children }) => {
                 rating,
                 setRating,
                 review,
+                compareCrumbList,
+                handleCompare,
+                compareId,
+                compareData,
+                deleteCompare
             }}
         >
             {children}

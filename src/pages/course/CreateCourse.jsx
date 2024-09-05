@@ -12,8 +12,8 @@ import {
 import NoFaq from "../../components/course/NoFaq";
 import { CourseContext } from "../../context api/CourseContext";
 
-const CreateCourse = () => {
-    const { setOpen } = useContext(CourseContext);
+const CreateCourse = ({open,setOpen}) => {
+   
     const pages = ["addDetails", "addDescription", "faq"];
     const [fileImage, setFileImage] = useState(null);
     const [fileImageUrl, setFileImageUrl] = useState(null);
