@@ -107,6 +107,7 @@ const CourseCardList = () => {
                                 desc={item.desc}
                                 rating={item.rating}
                                 id={item.id}
+                                totalRating={item.totalRating}
                                 handleCompare={handleCompare}
                             />
                         );
@@ -125,6 +126,7 @@ const CourseCardList = () => {
                                 credit={item.credit}
                                 desc={item.desc}
                                 rating={item.rating}
+                                totalRating={item.totalRating}
                                 id={item.id}
                                 handleCompare={handleCompare}
                             />

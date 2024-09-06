@@ -26,7 +26,7 @@ const AdditionalInfoModal = ({isSubmitted,value,setValue,handleSubmit}) => {
             >
                 <button className="outline-btn">Cancel</button>
 
-                <button onClick={()=>handleSubmit(id)} className='primary-btn' >
+                <button  className='primary-btn' >
                     Submit
                 </button>
             </form>

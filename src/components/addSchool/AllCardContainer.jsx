@@ -24,7 +24,7 @@ const AllCardContainer = ({ formData, schoolData, handleCourse }) => {
                 </p>
 
                 <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-2">
+                    <div className="hidden items-center gap-2 md:flex">
                         <label htmlFor="sort" className="text-primary font-medium text-sm">Sort by:</label>
                         <select name="sort" id="sort" className="item-select text-primary text-sm font-medium outline-none w-36">
                             <option value="" disabled>Recommended</option>

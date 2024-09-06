@@ -88,7 +88,7 @@ const Course = () => {
                     </p>
                 </Link>
             )}
-{compareId.length>2&&<div role="alert" className="alert alert-error bg-[#FFD6D6] opacity-80 rounded-md border-[1px] border-red-600 fixed left-1/2 transform -translate-x-1/2 bottom-auto top-20 md:top-auto md:bottom-20 md:w-[50%] flex items-center gap-2">
+{compareId.length>2&&<div role="alert" className="alert alert-error bg-[#FFD6D6] opacity-80 rounded-md border-[1px] border-red-600 fixed left-1/2 transform -translate-x-1/2 bottom-auto top-20 md:top-auto md:bottom-20 md:w-[30%] flex items-center gap-2">
 <img src={alert} alt="alert icon" />
   <span>You can select max 4 courses to compare</span>
 </div>}
